@@ -8,8 +8,11 @@ import Signup from './pages/signUp';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
 
+import API from "../src/utils/API";
+
 const App = () => {
   const history = useHistory();
+  const data = API.getLoginUser();
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
@@ -29,20 +32,25 @@ const App = () => {
   return (
     <div>
       <Navbar />
-
+      <ul>
+        <li> {data.name} </li>
+        <li> {data.ZIP} </li>
+      </ul>
       {state.user ? (
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>
       ) : (
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Redirect to="/login" />
-        </Switch>
-      )}
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Redirect to="/login" />
+          </Switch>
+        )}
     </div>
   );
 };
+
+
 
 export default App;
