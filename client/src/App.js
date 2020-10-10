@@ -7,6 +7,7 @@ import Login from './pages/login';
 import Signup from './pages/signUp';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
+
 import API from "../src/utils/API";
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
     </div>
   );
 };
+
 
 
 export default App;
