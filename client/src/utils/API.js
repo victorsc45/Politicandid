@@ -1,43 +1,24 @@
-export default {
-    getLoginUser: function () {
-        return {
-            id: 1,
-            name: "Mitchell Underwood",
-            county: "Wake",
-            state: "NC",
-            Country: "USA",
-            ZIP: "27612",
-            Issues: [
-                {
-                    Issue: "Net Neutrality",
-                    Important: true,
-                    Stance: 0
-                },
-                {
-                    Issue: "Economy",
-                    Important: false,
-                    Stance: 5
-                },
-                {
-                    Issue: "China Tariff",
-                    Important: true,
-                    Stance: -5
-                }
-            ],
-            Candidate: true,
-            Campaign: {
-                level: "County",
-                body: "School Board",
-                office: "School Board Member"
-            }
-        }
-    },
-    getResults: function () {
-        return [
-            { name: "Matt Neal", id: 3 },
-            { name: "Bob Smith", id: 8 },
-            { name: "Carl Jones", id: 6 }
-        ]
-    }
+import axios from "axios";
 
+export default {
+    // Gets all voters
+    getVoters: function () {
+        return axios.get("/api/voters");
+    },
+    // Gets the voter with the given id
+    getVoter: function (id) {
+        return axios.get("/api/voters/" + id);
+    },
+    // Deletes the voter with the given id
+    deleteVoter: function (id) {
+        return axios.delete("/api/voters/" + id);
+    },
+    // Saves a voter to the database
+    saveVoter: function (voterData) {
+        return axios.post("/api/voters", voterData);
+    },
+    updateVoter: function (voterData) {
+        return axios.put("/api/voter", voterData);
+    }
 };
+
