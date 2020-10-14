@@ -21,7 +21,7 @@ export default {
         return axios.put("/api/voter", voterData);
     },
     getLoginUser: function () {
-        return axios.get("/api/users");
+        return axios.get("/api/users"); 
     }
 };
 

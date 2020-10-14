@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Home from './pages/home';
@@ -11,12 +11,20 @@ import API from './utils/API'
 
 const App = () => {
   const history = useHistory();
-  const data = API.getLoginUser();
+  // const data = API.getLoginUser();
+  // let voterData = [];
+  const [voterData, setVoterData] = useState([]);
+
+  // console.log(voterData);
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
     dispatch({ type: LOADING });
 
+    API.getVoters()
+      .then(res => {
+        setVoterData(res.data)
+      });
     axios.get('/api/users').then((response) => {
       if (response.data.user) {
         dispatch({ type: SET_USER, user: response.data.user });
@@ -32,8 +40,8 @@ const App = () => {
     <div>
       <Navbar />
       <ul>
-        <li> {data.name} </li>
-        <li> {data.ZIP} </li>
+        <li> {voterData[0] ? voterData[0].name : "none"} </li>
+        <li> {voterData[0] ? voterData[0].state : "none"} </li>
       </ul>
       {state.user ? (
         <Switch>

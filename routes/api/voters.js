@@ -2,7 +2,8 @@ const router = require("express").Router();
 const votersController = require("../../controllers/votersControllers.js");
 
 // Matches with "/api/voters"
-router.route("/")
+router
+    .route("/")
     .get(votersController.findAll)
     .post(votersController.create);
 
