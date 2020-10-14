@@ -1,7 +1,9 @@
 import React from 'react';
+import Slider from '../components/Slider' 
 
 const Home = (props) => {
-  return <div>WE ARE LOGGED IN</div>;
+  return <div><Slider/>
+   </div>;
 };
 
 Home.propTypes = {};
