@@ -3,7 +3,8 @@ const db = require('../database/models');
 // Defining methods for the VotersController
 module.exports = {
   findAll: function (req, res) {
-    db.Voter.find(req.query)
+    db.Voter
+      .find()
       .sort({ candidate: false })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
