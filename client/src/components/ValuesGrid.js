@@ -24,6 +24,7 @@ class ValuesGrid extends React.Component {
             <React.Fragment>
                 <ValueHeaders/>
                 <Values key={"values"} user={this.user}/>
+                <Switches/>
             </React.Fragment>
         )
     }
