@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tempDB");
 
 const voterSeed = [
   {
-    id: 1,
+    user_id: 1,
     name: "Mitchell Underwood",
     county: "Wake",
     state: "NC",
@@ -38,7 +38,7 @@ const voterSeed = [
     },
   },
   {
-    id: 2,
+    user_id: 2,
     name: "Bob Smith",
     county: "Durham",
     state: "NC",
