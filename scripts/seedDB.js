@@ -15,34 +15,34 @@ const Seed = [
     issues: [{issue: "Bunnies", stance: 5, important: true},{issue: "Kitties", stance: -5, important: true}]
   },
   {
-    name: "Bob Vance",
-    city: "Scranton",
-    county: "Scranton",
-    state: "PA",
+    name: "Luke Evans",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
     country: "USA",
     username: "luke@evans.com",
     password: "$2a$10$6hxNMqK/ITjkrfClBtH7TeV1lCwEcfRddO8.sBBDEogvuGh06qtRK",
-    issues: []
+    issues: [{issue: "Fortnight", stance: 5, important: true},{issue: "Tiger King", stance: -5, important: true}]
   },
   {
-    name: "Bob Vance",
-    city: "Scranton",
-    county: "Scranton",
-    state: "PA",
+    name: "Matthew Neal",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
     country: "USA",
     username: "matthew@neal.com",
     password: "$2a$10$r0ldOGYNx555jgQUn.8.y.mWv/rZiNms7EDwuNpxH2khaSfx5V8pq",
-    issues: []
+    issues: [{issue: "Cycling", stance: 5, important: true},{issue: "Printing", stance: -5, important: true}]
   },
   {
-    name: "Bob Vance",
-    city: "Scranton",
-    county: "Scranton",
-    state: "PA",
+    name: "Victor Litzau",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
     country: "USA",
     username: "victor@litzau.com",
     password: "$2a$10$5RmszFBpPRG0rLb18ngDy.K/sMoATHNpa25SHGdTGyPdpYG56gn9C",
-    issues: []
+    issues: [{issue: "Airbrushing", stance: 5, important: true},{issue: "Charleston", stance: -5, important: true}]
   },
 ];
 
