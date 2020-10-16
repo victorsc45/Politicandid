@@ -1,27 +1,27 @@
 import axios from "axios";
 
 export default {
-    // Gets all voters
-    getVoters: function () {
-        return axios.get("/api/voters");
+    // Gets all users
+    getUsers: function () {
+        return axios.get("/api/users");
     },
     // Gets the voter with the given id
-    getVoter: function (id) {
-        return axios.get("/api/voters/" + id);
+    getUser: function (id) {
+        return axios.get("/api/users/" + id);
     },
     // Deletes the voter with the given id
-    deleteVoter: function (id) {
-        return axios.delete("/api/voters/" + id);
+    deleteUser: function (id) {
+        return axios.delete("/api/users/" + id);
     },
     // Saves a voter to the database
-    saveVoter: function (voterData) {
-        return axios.post("/api/voters", voterData);
+    saveUser: function (userData) {
+        return axios.post("/api/users", userData);
     },
-    updateVoter: function (voterData) {
-        return axios.put("/api/voter", voterData);
+    updateUser: function (userData) {
+        return axios.put("/api/user", userData);
     },
     getLoginUser: function () {
-        return axios.get("/api/users"); 
+        return axios.get("/api/users");
     }
 };
 
