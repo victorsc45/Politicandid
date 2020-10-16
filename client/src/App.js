@@ -4,6 +4,7 @@ import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import Navbar from './components/navbar';
 
 import Home from './pages/home';
+import MatchesPage from './pages/matches';
 import Login from './pages/login';
 import Signup from './pages/signUp';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
@@ -48,7 +49,7 @@ const App = () => {
       {state.user ? (
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/userpage" component={userPage} /> */}
+          <Route exact path="/matchespage" component={MatchesPage} />
         </Switch>
       ) : (
           <Switch>
