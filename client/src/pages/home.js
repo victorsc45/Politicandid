@@ -4,7 +4,6 @@ import ValuesGrid from '../components/ValuesGrid'
 
 const Home = (props) => {
   return <div>
-    <Slider/>
     <ValuesGrid/> 
    </div>;
 };
