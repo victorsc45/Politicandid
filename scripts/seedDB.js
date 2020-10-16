@@ -5,33 +5,27 @@ const db = require("../database/models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tempDB");
 
-const userSeed = [
+const voterSeed = [
   {
-
-    username: "Mitchell@Underwood.com",
-    password: "abc123",
-    voterInfo: {
-      county: "Wake",
-      state: "NC",
-      country: "USA",
-      zip: "27612",
-      photoUrl: "https://avatars0.githubusercontent.com/victorsc45"
-    },
-
-
+    user_id: 1,
+    name: "Mitchell Underwood",
+    county: "Wake",
+    state: "NC",
+    country: "USA",
+    zip: "27612",
     issues: [
       {
-        belief: "Net Neutrality",
+        issue: "Net Neutrality",
         important: true,
         stance: 0,
       },
       {
-        belief: "Economy",
+        issue: "Economy",
         important: false,
         stance: 5,
       },
       {
-        belief: "China Tariff",
+        issue: "China Tariff",
         important: true,
         stance: -5,
       },
@@ -42,49 +36,42 @@ const userSeed = [
       body: "School Board",
       office: "School Board Member",
     },
-
   },
   {
-    username: "victor@some.com",
-    password: "123456",
-    voterInfo: {
-      county: "Durham",
-      state: "NC",
-      country: "USA",
-      zip: "27606",
-      photoUrl: "https://avatars0.githubusercontent.com/victorsc45"
-    },
-
-
+    user_id: 2,
+    name: "Bob Smith",
+    county: "Durham",
+    state: "NC",
+    country: "USA",
+    zip: "27606",
     issues: [
       {
-        belief: "Net Neutrality",
+        issue: "Net Neutrality",
         important: true,
         stance: 0,
       },
       {
-        belief: "Economy",
+        issue: "Economy",
         important: false,
         stance: 5,
       },
       {
-        belief: "China Tariff",
+        issue: "China Tariff",
         important: true,
         stance: -5,
       },
     ],
-    candidate: false,
+    candidate: "",
     campaign: {
       level: "",
       body: "",
       office: "",
     },
-
-  }
+  },
 ];
 
-db.User.remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+db.Voter.remove({})
+  .then(() => db.Voter.collection.insertMany(voterSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

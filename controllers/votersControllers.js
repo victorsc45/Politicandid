@@ -3,29 +3,29 @@ const db = require('../database/models');
 // Defining methods for the VotersController
 module.exports = {
   findAll: function (req, res) {
-    db.User
+    db.Voter
       .find()
       .sort({ candidate: false })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   findById: function (req, res) {
-    db.User.findById(req.params.id)
+    db.Voter.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   create: function (req, res) {
-    db.User.create(req.body)
+    db.Voter.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
-    db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.Voter.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
   remove: function (req, res) {
-    db.User.findById({ _id: req.params.id })
+    db.Voter.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
