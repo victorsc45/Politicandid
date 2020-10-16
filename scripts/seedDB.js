@@ -5,14 +5,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tempDB");
 
 const Seed = [
   {
-    name: "Bob Vance",
-    city: "Scranton",
-    county: "Scranton",
-    state: "PA",
+    name: "Mitchell Underwood",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
     country: "USA",
     username: "mitchell@underwood.com",
     password: "$2a$10$ma0MBuyBvsrA0YRZKYQf6uaLJVSLITsQAKIlwQuhNs509OLV5zWe6",
-    issues: []
+    issues: [{issue: "Bunnies", stance: 5, important: true},{issue: "Kitties", stance: -5, important: true}]
   },
   {
     name: "Bob Vance",
