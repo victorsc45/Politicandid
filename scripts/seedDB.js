@@ -1,77 +1,53 @@
 const mongoose = require("mongoose");
 const db = require("../database/models");
 
-// This file empties the Books collection and inserts the books below
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tempDB");
 
-const voterSeed = [
+const Seed = [
   {
-    user_id: 1,
-    name: "Mitchell Underwood",
-    county: "Wake",
-    state: "NC",
+    name: "Bob Vance",
+    city: "Scranton",
+    county: "Scranton",
+    state: "PA",
     country: "USA",
-    zip: "27612",
-    issues: [
-      {
-        issue: "Net Neutrality",
-        important: true,
-        stance: 0,
-      },
-      {
-        issue: "Economy",
-        important: false,
-        stance: 5,
-      },
-      {
-        issue: "China Tariff",
-        important: true,
-        stance: -5,
-      },
-    ],
-    candidate: true,
-    campaign: {
-      level: "County",
-      body: "School Board",
-      office: "School Board Member",
-    },
+    username: "mitchell@underwood.com",
+    password: "$2a$10$ma0MBuyBvsrA0YRZKYQf6uaLJVSLITsQAKIlwQuhNs509OLV5zWe6",
+    issues: []
   },
   {
-    user_id: 2,
-    name: "Bob Smith",
-    county: "Durham",
-    state: "NC",
+    name: "Bob Vance",
+    city: "Scranton",
+    county: "Scranton",
+    state: "PA",
     country: "USA",
-    zip: "27606",
-    issues: [
-      {
-        issue: "Net Neutrality",
-        important: true,
-        stance: 0,
-      },
-      {
-        issue: "Economy",
-        important: false,
-        stance: 5,
-      },
-      {
-        issue: "China Tariff",
-        important: true,
-        stance: -5,
-      },
-    ],
-    candidate: "",
-    campaign: {
-      level: "",
-      body: "",
-      office: "",
-    },
+    username: "luke@evans.com",
+    password: "$2a$10$6hxNMqK/ITjkrfClBtH7TeV1lCwEcfRddO8.sBBDEogvuGh06qtRK",
+    issues: []
+  },
+  {
+    name: "Bob Vance",
+    city: "Scranton",
+    county: "Scranton",
+    state: "PA",
+    country: "USA",
+    username: "matthew@neal.com",
+    password: "$2a$10$r0ldOGYNx555jgQUn.8.y.mWv/rZiNms7EDwuNpxH2khaSfx5V8pq",
+    issues: []
+  },
+  {
+    name: "Bob Vance",
+    city: "Scranton",
+    county: "Scranton",
+    state: "PA",
+    country: "USA",
+    username: "victor@litzau.com",
+    password: "$2a$10$5RmszFBpPRG0rLb18ngDy.K/sMoATHNpa25SHGdTGyPdpYG56gn9C",
+    issues: []
   },
 ];
 
-db.Voter.remove({})
-  .then(() => db.Voter.collection.insertMany(voterSeed))
+db.User.remove({})
+  .then(() => db.User.collection.insertMany(Seed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
