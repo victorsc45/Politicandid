@@ -94,6 +94,10 @@ function App({ classes }) {
 
 
                     <Divider className={classes.divider} light />
+                    Import Switches Component and Sliders
+                    <br />
+                    Link those to userDB
+                    <br />
                     {faces.map(face => (
                         <Avatar className={classes.avatar} key={face} src={face} />
                     ))}
