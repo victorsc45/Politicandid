@@ -19,7 +19,6 @@ const reducer = (state, action) => {
         user: action.user,
         loading: false,
       };
-
     case UNSET_USER:
       return {
         ...state,

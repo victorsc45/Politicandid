@@ -8,6 +8,38 @@ mongoose.promise = Promise;
 const userSchema = new Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, unique: true, required: true },
+  voterInfo: {
+    county: {
+      type: String,
+      required: true
+    },
+    state: {
+      type: String,
+      required: true
+    },
+    country: {
+      type: String,
+      required: true
+    },
+
+    zip: {
+      type: Number,
+      required: false
+    },
+    photoUrl: String,
+    required: false
+  },
+  issues: [{
+    belief: { type: String, required: true },
+    important: { type: Boolean, required: true },
+    stance: { type: Number, required: true }
+  }],
+  candidate: { type: Boolean, required: false },
+  campaign: {
+    level: { type: String, required: false },
+    body: { type: String, required: false },
+    office: { type: String, required: false }
+  },
 });
 
 // Define schema methods

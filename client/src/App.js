@@ -8,25 +8,18 @@ import Login from './pages/login';
 import Signup from './pages/signUp';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
-import API from './utils/API'
+
 
 
 const App = () => {
   const history = useHistory();
-  // const data = API.getLoginUser();
-  // let voterData = [];
-  const [voterData, setVoterData] = useState([]);
 
-  // console.log(voterData);
   const [state, dispatch] = useStoreContext();
 
   useEffect(() => {
     dispatch({ type: LOADING });
 
-    API.getVoters()
-      .then(res => {
-        setVoterData(res.data)
-      });
+
     axios.get('/api/users').then((response) => {
       if (response.data.user) {
         dispatch({ type: SET_USER, user: response.data.user });
@@ -41,10 +34,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <ul>
-        <li> {voterData[0] ? voterData[0].name : "none"} </li>
-        <li> {voterData[0] ? voterData[0].state : "none"} </li>
-      </ul>
+
       {state.user ? (
         <Switch>
           <Route exact path="/" component={Home} />
