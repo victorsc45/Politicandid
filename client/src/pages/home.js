@@ -1,15 +1,12 @@
 import React from 'react';
-import Slider from '../components/Slider'
+import Slider from '../components/Slider' 
 import ValuesGrid from '../components/ValuesGrid'
-
-
-
 
 const Home = (props) => {
   return <div>
-    <Slider />
-    <ValuesGrid />
-  </div>;
+    <Slider/>
+    <ValuesGrid/> 
+   </div>;
 };
 
 Home.propTypes = {};
