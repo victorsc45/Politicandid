@@ -27,12 +27,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-      <Link to="/" className="btn btn-link text-secondary">
-        <span className="text-secondary">Home</span>
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+      <Link to="/" className="btn btn-link text-primary">
+        <span className="text-">Home</span>
       </Link>
       <Link to="/matchespage" className="btn btn-link text-secondary">
-        <span className="text-secondary">Matches</span>
+        <span className="text-success">Matches</span>
       </Link>
       <button
         className="navbar-toggler"
@@ -50,19 +50,19 @@ const Navbar = () => {
           {state.user ? (
             <li className="nav-item active">
               <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
-                <span className="text-secondary">Logout</span>
+                <span className="text-danger">Logout</span>
               </Link>
             </li>
           ) : (
               <>
                 <li className="nav-item active">
                   <Link to="/login" className="btn btn-link text-secondary">
-                    <span className="text-secondary">Voter login</span>
+                    <span className="text-warning"> Login</span>
                   </Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/signup" className="btn btn-link">
-                    <span className="text-secondary">Sign up</span>
+                    <span className="text-info">Sign up</span>
                   </Link>
                 </li>
               </>
