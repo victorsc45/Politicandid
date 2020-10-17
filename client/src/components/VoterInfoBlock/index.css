@@ -14,19 +14,19 @@
 }
 #campaign-button {
   width: 200px;
-  background: red;
+  background-color: #D4002E;
   color: white;
   border: none;
   border-radius: 5px;
 }
 
 #campaign-button:hover {
-  background: blue;
+  background: #11319B;
 }
 
 #voter-button {
   width: 200px;
-  background: green;
+  background: #46C700;
   color: white;
   border: none;
   border-radius: 5px;
