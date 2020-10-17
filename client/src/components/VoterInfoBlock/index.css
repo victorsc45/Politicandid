@@ -1,0 +1,40 @@
+#location-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#location-block h4 {
+  margin: 20px;
+}
+
+#user-name {
+  margin-bottom: 0px;
+  text-align: center;
+}
+#campaign-button {
+  width: 200px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#campaign-button:hover {
+  background: blue;
+}
+
+#voter-button {
+  width: 200px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#campaign-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

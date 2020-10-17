@@ -1,0 +1,38 @@
+.issue-header {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
+  margin: 10px;
+  /* border: 1px solid black; */
+  padding: 10px;
+  background: rgb(238, 238, 238);
+  border-radius: 5px;
+  box-shadow: 2px 2px #b3b3b3;
+}
+
+.issue-header h6 {
+  color: rgb(87, 87, 87);
+  font-weight: bolder;
+}
+
+#stance-name {
+  width: 320px;
+  text-align: center;
+}
+
+#issue-name {
+  width: 200px;
+  margin: 0px;
+  margin-left: 10px;
+}
+
+#stance-name {
+  margin: 0px;
+  margin-right: 20px;
+}
+
+#important-name {
+  margin: 0px;
+  margin-right: 10px;
+}

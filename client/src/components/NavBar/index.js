@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { LOADING, UNSET_USER } from '../store/actions';
-import { useStoreContext } from '../store/store';
+import { LOADING, UNSET_USER } from '../../store/actions';
+import { useStoreContext } from '../../store/store';
 
 const Navbar = () => {
   const [state, dispatch] = useStoreContext();

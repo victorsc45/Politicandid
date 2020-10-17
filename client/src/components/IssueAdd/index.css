@@ -1,0 +1,23 @@
+.issue-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  /* border: 1px solid black; */
+  padding: 10px;
+  background: rgb(238, 238, 238);
+  border-radius: 5px;
+  box-shadow: 2px 2px #b3b3b3;
+}
+
+#add-button {
+  margin-left: 37px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: rgb(184, 245, 184);
+}
+
+#add-button:hover {
+  color: white;
+  background: rgb(97, 97, 255);
+}

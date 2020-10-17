@@ -1,14 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { LOADING, SET_USER } from '../store/actions';
-import { useStoreContext } from '../store/store';
+import "./index.css";
 
-const Login = () => {
-  const [, /* state */ dispatch] = useStoreContext();
+const SignUp = () => {
   const history = useHistory();
 
-  const [loginCreds, setLoginCreds] = useState({
+  const [signUpCreds, setSignUpCreds] = useState({
     username: '',
     password: '',
   });
@@ -16,34 +14,33 @@ const Login = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setLoginCreds({ ...loginCreds, [name]: value });
+    setSignUpCreds({ ...signUpCreds, [name]: value });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch({ type: LOADING });
-
     axios
-      .post('/api/users/login', {
-        username: loginCreds.username,
-        password: loginCreds.password,
+      .post('/api/users', {
+        username: signUpCreds.username,
+        password: signUpCreds.password,
       })
       .then((response) => {
-        if (response.status === 200) {
-          dispatch({ type: SET_USER, user: response.data });
-          history.replace('/');
+        if (!response.data.error) {
+          history.replace('/login');
+        } else {
+          console.log('USERNAME TAKEN');
         }
       })
       .catch((error) => {
-        console.log('login error: ');
         console.log(error);
       });
   };
 
   return (
+    <div id="signup-container">
     <div className="text-center">
-      <h4>Login</h4>
+      <h4>Sign Up</h4>
       <form className="form-signin">
         <label htmlFor="inputEmail" className="sr-only">
           Email address
@@ -54,7 +51,7 @@ const Login = () => {
           className="form-control"
           name="username"
           placeholder="Email address"
-          value={loginCreds.username}
+          value={signUpCreds.username}
           onChange={handleChange}
         />
         <label htmlFor="inputPassword" className="sr-only">
@@ -66,15 +63,16 @@ const Login = () => {
           className="form-control"
           name="password"
           placeholder="Password"
-          value={loginCreds.password}
+          value={signUpCreds.password}
           onChange={handleChange}
         />
         <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={handleSubmit}>
-          Login
+          Sign Up
         </button>
       </form>
+    </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

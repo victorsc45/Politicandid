@@ -1,77 +1,53 @@
 const mongoose = require("mongoose");
 const db = require("../database/models");
 
-// This file empties the Books collection and inserts the books below
-
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/tempDB");
 
-const voterSeed = [
+const Seed = [
   {
-    user_id: 1,
     name: "Mitchell Underwood",
+    city: "Raleigh",
     county: "Wake",
     state: "NC",
     country: "USA",
-    zip: "27612",
-    issues: [
-      {
-        issue: "Net Neutrality",
-        important: true,
-        stance: 0,
-      },
-      {
-        issue: "Economy",
-        important: false,
-        stance: 5,
-      },
-      {
-        issue: "China Tariff",
-        important: true,
-        stance: -5,
-      },
-    ],
-    candidate: true,
-    campaign: {
-      level: "County",
-      body: "School Board",
-      office: "School Board Member",
-    },
+    username: "mitchell@underwood.com",
+    password: "$2a$10$ma0MBuyBvsrA0YRZKYQf6uaLJVSLITsQAKIlwQuhNs509OLV5zWe6",
+    issues: [{issue: "Bunnies", stance: 5, important: true},{issue: "Kitties", stance: -5, important: true}]
   },
   {
-    user_id: 2,
-    name: "Bob Smith",
-    county: "Durham",
+    name: "Luke Evans",
+    city: "Raleigh",
+    county: "Wake",
     state: "NC",
     country: "USA",
-    zip: "27606",
-    issues: [
-      {
-        issue: "Net Neutrality",
-        important: true,
-        stance: 0,
-      },
-      {
-        issue: "Economy",
-        important: false,
-        stance: 5,
-      },
-      {
-        issue: "China Tariff",
-        important: true,
-        stance: -5,
-      },
-    ],
-    candidate: "",
-    campaign: {
-      level: "",
-      body: "",
-      office: "",
-    },
+    username: "luke@evans.com",
+    password: "$2a$10$6hxNMqK/ITjkrfClBtH7TeV1lCwEcfRddO8.sBBDEogvuGh06qtRK",
+    issues: [{issue: "Fortnight", stance: 5, important: true},{issue: "Tiger King", stance: -5, important: true}]
+  },
+  {
+    name: "Matthew Neal",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
+    country: "USA",
+    username: "matthew@neal.com",
+    password: "$2a$10$r0ldOGYNx555jgQUn.8.y.mWv/rZiNms7EDwuNpxH2khaSfx5V8pq",
+    issues: [{issue: "Cycling", stance: 5, important: true},{issue: "Printing", stance: -5, important: true}]
+  },
+  {
+    name: "Victor Litzau",
+    city: "Raleigh",
+    county: "Wake",
+    state: "NC",
+    country: "USA",
+    username: "victor@litzau.com",
+    password: "$2a$10$5RmszFBpPRG0rLb18ngDy.K/sMoATHNpa25SHGdTGyPdpYG56gn9C",
+    issues: [{issue: "Airbrushing", stance: 5, important: true},{issue: "Charleston", stance: -5, important: true}]
   },
 ];
 
-db.Voter.remove({})
-  .then(() => db.Voter.collection.insertMany(voterSeed))
+db.User.remove({})
+  .then(() => db.User.collection.insertMany(Seed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

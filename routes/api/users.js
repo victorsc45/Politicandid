@@ -42,15 +42,26 @@ router.post(
   passport.authenticate('local'),
   (req, res) => {
     console.log('LOGGED IN', req.user);
-    res.send({
-      username: req.user.username,
-    });
+    User.find({username: req.user.username}).then(data => {
+      const username = data.username;
+      
+      res.send({
+        username: req.user.username, 
+        data: data[0]
+      });
+    })
   }
 );
 
 router.get('/', (req, res) => {
   if (req.user) {
-    res.json({ user: req.user });
+    console.log('Hit GET Route', req.user);
+    User.find({username: req.user.username}).then(data => {      
+      res.send({
+        username: req.user.username, 
+        data: data[0]
+      });
+    })
   } else {
     res.json({ user: null });
   }
