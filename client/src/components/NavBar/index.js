@@ -29,10 +29,10 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <Link to="/" className="btn btn-link text-primary">
-        <span className="text-">Home</span>
+        <span className="text-warning">Home</span>
       </Link>
       <Link to="/matchespage" className="btn btn-link text-secondary">
-        <span className="text-success">Matches</span>
+        <span className="text-warning">Matches</span>
       </Link>
       <button
         className="navbar-toggler"
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item active">
                   <Link to="/signup" className="btn btn-link">
-                    <span className="text-info">Sign up</span>
+                    <span className="text-warning">Sign up</span>
                   </Link>
                 </li>
               </>
