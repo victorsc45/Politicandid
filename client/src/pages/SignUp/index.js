@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "./index.css";
+import tourists from '../../components/video/tourists.mp4'
 
 const SignUp = () => {
   const history = useHistory();
@@ -39,6 +40,21 @@ const SignUp = () => {
 
   return (
     <div id="signup-container">
+     Free B-Roll by <a href="http://videezy.com">Videezy</a>
+      <video autoPlay loop muted
+      style={{
+        position: "absolute",
+        width: "100%",
+        left: "50%",
+        top: '50%',
+        height: "100%",
+        objectFit: "cover",
+        transform: "translate(-50%, -50%)",
+        zIndex: "-1"
+      }}
+      >
+      <source src={tourists} type="video/mp4"/>
+    </video>
     <div className="text-center">
       <h4>Sign Up</h4>
       <form className="form-signin">
