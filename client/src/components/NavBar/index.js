@@ -28,12 +28,6 @@ const Navbar = () => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
-      <Link to="/" className="btn btn-link text-primary">
-        <span className="text-warning">Home</span>
-      </Link>
-      <Link to="/matchespage" className="btn btn-link text-secondary">
-        <span className="text-warning">Matches</span>
-      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -48,11 +42,23 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           {state.user ? (
-            <li className="nav-item active">
-              <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
-                <span className="text-danger">Logout</span>
-              </Link>
-            </li>
+            <>
+              <li className="nav-item active">
+                <Link to="/" className="btn btn-link text-primary">
+                  <span className="text-warning">Home</span>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="/matchespage" className="btn btn-link text-secondary">
+                  <span className="text-warning">Matches</span>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
+                  <span className="text-danger">Logout</span>
+                </Link>
+              </li>
+            </>
           ) : (
               <>
                 <li className="nav-item active">
