@@ -1,9 +1,30 @@
+const { response } = require('express');
 const express = require('express');
 
 const router = express.Router();
 
 const User = require('../../database/models/user');
 const passport = require('../../passport');
+
+router.put('/:id', (req, res) => {
+  console.log('route id hit', req.params.id);
+  console.log('put body', req.body)
+  const user_id = req.params.id;
+  User.findOne({ _id: user_id })
+    .then(res => {
+      const findIssue = res.issues.map(i => i.issue).indexOf(req.body.issue)
+      console.log("index of issues, ", findIssue)
+
+      res.issues[findIssue].important = !res.issues[findIssue].important
+      User.findOneAndUpdate({ _id: user_id }, { $set: { issues: res.issues } })
+        .then(res => res.json({ res }))
+        .catch(err => console.log(err))
+    })
+  // User.findOneAndUpdate({ _id: user_id }, req.body)
+  //   .then((dbModel) => res.json(dbModel))
+  //   .catch((err) => res.send(422).json(err));
+  // console.log("findone", res.json);
+});
 
 router.post('/', (req, res) => {
   const { username, password } = req.body;
@@ -42,11 +63,11 @@ router.post(
   passport.authenticate('local'),
   (req, res) => {
     console.log('LOGGED IN', req.user);
-    User.find({username: req.user.username}).then(data => {
+    User.find({ username: req.user.username }).then(data => {
       const username = data.username;
-      
+
       res.send({
-        username: req.user.username, 
+        username: req.user.username,
         data: data[0]
       });
     })
@@ -56,9 +77,9 @@ router.post(
 router.get('/', (req, res) => {
   if (req.user) {
     console.log('Hit GET Route', req.user);
-    User.find({username: req.user.username}).then(data => {      
+    User.find({ username: req.user.username }).then(data => {
       res.send({
-        username: req.user.username, 
+        username: req.user.username,
         data: data[0]
       });
     })

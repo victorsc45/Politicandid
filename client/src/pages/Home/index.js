@@ -15,13 +15,13 @@ const Home = (props) => {
   return (<div id="home-container">
     <Card >
       <CardContent>
-      <VoterInfoBlock info={props.state.data}/>
+        <VoterInfoBlock info={props.state.data} />
       </CardContent>
       <CardContent>
-      <VoterIssueBlock issues={props.state.data.issues}/>
+        <VoterIssueBlock issues={props.state.data} />
       </CardContent>
     </Card>
-    
+
   </div>)
 };
 
