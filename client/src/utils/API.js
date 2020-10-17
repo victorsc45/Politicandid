@@ -1,27 +1,17 @@
-import axios from "axios";
+// import axios from "axios";
 
 export default {
-    // Gets all voters
-    getVoters: function () {
-        return axios.get("/api/voters");
-    },
-    // Gets the voter with the given id
-    getVoter: function (id) {
-        return axios.get("/api/voters/" + id);
-    },
-    // Deletes the voter with the given id
-    deleteVoter: function (id) {
-        return axios.delete("/api/voters/" + id);
-    },
-    // Saves a voter to the database
-    saveVoter: function (voterData) {
-        return axios.post("/api/voters", voterData);
-    },
-    updateVoter: function (voterData) {
-        return axios.put("/api/voter", voterData);
-    },
-    getLoginUser: function () {
-        return axios.get("/api/users"); 
+    getFakeData: function() {
+        return {
+            name: "Bob Vance",
+            city: "Scranton",
+            county: "Scranton",
+            state: "PA",
+            country: "USA",
+            username: "mitchell@underwood.com",
+            password: "$2a$10$ma0MBuyBvsrA0YRZKYQf6uaLJVSLITsQAKIlwQuhNs509OLV5zWe6",
+            issues: [{issue: "Donuts for Breakfast", importance: true, stance: 5},{issue: "Donuts for Lunch", importance: true, stance: 3},{issue: "Donuts for Dinner", importance: true, stance: -4}]
+          }
     }
 };
 

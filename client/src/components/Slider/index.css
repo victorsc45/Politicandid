@@ -1,0 +1,19 @@
+.slider {
+  width: 300px;
+}
+
+#stance-range {
+  /* margin-top: 5px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+#stance-range p {
+  margin: 0px;
+}
+
+.neutral {
+  padding-right: 25px;
+}

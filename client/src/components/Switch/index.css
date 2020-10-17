@@ -1,0 +1,14 @@
+.issue-important {
+  margin-bottom: 8px;
+  margin-left: 30px;
+}
+
+.issue-important-range {
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+}
+
+.issue-important-range p {
+  margin: 0px;
+}
