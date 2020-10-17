@@ -27,13 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link to="/" className="btn btn-link text-secondary">
-        <span className="text-secondary">home</span>
-      </Link>
-      <Link to="/matchespage" className="btn btn-link text-secondary">
-        <span className="text-secondary">matches</span>
-      </Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <button
         className="navbar-toggler"
         type="button"
@@ -48,21 +42,33 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           {state.user ? (
-            <li className="nav-item active">
-              <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
-                <span className="text-secondary">logout</span>
-              </Link>
-            </li>
+            <>
+              <li className="nav-item active">
+                <Link to="/" className="btn btn-link text-primary">
+                  <span className="text-warning">Home</span>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="/matchespage" className="btn btn-link text-secondary">
+                  <span className="text-warning">Matches</span>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
+                  <span className="text-danger">Logout</span>
+                </Link>
+              </li>
+            </>
           ) : (
               <>
                 <li className="nav-item active">
                   <Link to="/login" className="btn btn-link text-secondary">
-                    <span className="text-secondary">login</span>
+                    <span className="text-warning"> Login</span>
                   </Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/signup" className="btn btn-link">
-                    <span className="text-secondary">sign up</span>
+                    <span className="text-warning">Sign up</span>
                   </Link>
                 </li>
               </>
