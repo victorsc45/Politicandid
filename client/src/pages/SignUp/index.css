@@ -4,3 +4,37 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+#inputEmail {
+  margin-bottom: 5px;
+}
+
+#inputPassword {
+  margin-bottom: 5px;
+}
+
+.form-signin {
+  margin-top: 100px;
+}
+
+.videezyStyling {
+  position: absolute;
+  right: 10px;
+
+}
+
+.text-center > h1 {
+  font-size: 72px;
+}
+
+.politi {
+  color:#D4002E;
+}
+
+.candid {
+  color: #11319B;
+}
+
+.signupBtn {
+  background-color: #38A100;
+}
