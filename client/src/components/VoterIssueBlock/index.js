@@ -34,8 +34,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+
 export default function VoterValuesBlock(props) {
     // console.log("VoterValuesBlock Props:", props.issues)
+
 
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -45,6 +47,7 @@ export default function VoterValuesBlock(props) {
     };
     return (
         <Card>
+
             <CardActions>
                 <IconButton
                     className={clsx(classes.expand, {
@@ -60,17 +63,19 @@ export default function VoterValuesBlock(props) {
 
             <h1>Issues</h1>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <div id="issues-container">
-                    <div id="issues-grid">
-                        <IssueHeader />
-                        {props.issues.map(issue => {
-                            return <IssueRow key={issue.issue} issue={issue} />
-                        })}
-                        <IssueAdd />
-                    </div>
+                 <div id="issues-container">
+                <h1>Issues</h1>
+                <div id="issues-grid">
+                    <IssueHeader />
+                    {props.issues.issues.map(issue => {
+                        return <IssueRow key={issue.issue} issue={issue} userId={props.issues._id} />
+                    })}
+                    <IssueAdd />
                 </div>
+            </div>
 
             </Collapse>
+
 
         </Card>
     );
