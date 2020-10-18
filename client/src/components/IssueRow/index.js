@@ -9,7 +9,7 @@ function IssueRow(props) {
     return <div className="issue-row">
         <h6 className="issue-name">{issue}</h6>
         <Slider className="issue-stance" stance={stance} />
-        <Switch className="issue-important" important={important} userId={props.userId} issue={issue} />
+        <Switch className="issue-important" important={important} issueName={issue} />
     </div>
 }
 
