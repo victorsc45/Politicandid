@@ -23,10 +23,27 @@ const passport = require('../../passport');
   
 // });
 
-// User.findOneAndUpdate({ _id: user_id }, req.body)
-  //   .then((dbModel) => res.json(dbModel))
-  //   .catch((err) => res.send(422).json(err));
-  // console.log("findone", res.json);
+router.post("/update", (req, res) => {
+  const { username, issues } = req.body;
+  console.log("Username on update route", req.body);
+  User.findOneAndUpdate({ username: req.body.username }, {$set: {issues: req.body.issues}},{new:true})
+    .then((document) => {
+      console.log("document after update:", document);
+      res.send(200);
+    //   const { name, city, county, state, country, zip, issues, candidate, campaign} = document[0];
+ 
+    //   res.send({
+    //     username: req.user.username,
+    //     userData: {name, city, county, state, country, zip },
+    //     issuesData: issues,
+    //     candidateData: {candidate, campaign},
+    //     matchesData: null, 
+    //     currentMatch: null
+    //   })
+    // .catch((err) => res.send(422).json(err));
+});
+});
+
 
 router.post('/', (req, res) => {
   const { username, password } = req.body;
@@ -68,7 +85,7 @@ router.post(
 
 
     User.find({ username: req.user.username }).then(document => {
-      console.log("document:", document.issues);
+      console.log("document issues at login:", document[0].issues);
       const { name, city, county, state, country, zip, issues, candidate, campaign} = document[0];
  
       res.send({
