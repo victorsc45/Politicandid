@@ -9,12 +9,12 @@ export default function VoterInfoBlock(props) {
         <Card>
             <CardContent>
 
-                <h1 id="user-name">{props.info.name}</h1>
+                <h1 id="user-name">{props.userData.name}</h1>
                 <div id="location-block">
-                    <h4>City: {props.info.city}</h4>
-                    <h4>County: {props.info.county} </h4>
-                    <h4>State: {props.info.state} </h4>
-                    <h4>Country: {props.info.country} </h4>
+                    <h4>City: {props.userData.city}</h4>
+                    <h4>County: {props.userData.county} </h4>
+                    <h4>State: {props.userData.state} </h4>
+                    <h4>Country: {props.userData.country} </h4>
                 </div>
                 <div id="campaign-block">
                     <button id="voter-button">Voter</button>

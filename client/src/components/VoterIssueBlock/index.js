@@ -67,8 +67,8 @@ export default function VoterValuesBlock(props) {
                 <h1>Issues</h1>
                 <div id="issues-grid">
                     <IssueHeader />
-                    {props.issues.issues.map(issue => {
-                        return <IssueRow key={issue.issue} issue={issue} userId={props.issues._id} />
+                    {props.issuesData.map(issue => {
+                    return <IssueRow key={issue.issue} issueData={issue} />
                     })}
                     <IssueAdd />
                 </div>

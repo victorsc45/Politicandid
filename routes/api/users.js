@@ -68,7 +68,8 @@ router.post(
 
 
     User.find({ username: req.user.username }).then(document => {
-      const { name, city, county, state, country, zip, issues, candidate, campaign} = document;
+      console.log("document:", document.issues);
+      const { name, city, county, state, country, zip, issues, candidate, campaign} = document[0];
  
       res.send({
         username: req.user.username,

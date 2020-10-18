@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-import { LOGIN, LOGOUT, SET_USER, UNSET_USER, SET_USER_SWITCH } from './actions';
+import { LOGIN, LOGOUT, SET_USER, UNSET_USER, UPDATE_ALL_DATA, UPDATE_USER_DATA, UPDATE_ISSUES_DATA, UPDATE_CANDIDATE_DATA, UPDATE_MATCHES_DATA, UPDATE_CURRENT_MATCH } from './actions';
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
