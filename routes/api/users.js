@@ -30,18 +30,7 @@ router.post("/update", (req, res) => {
     .then((document) => {
       console.log("document after update:", document);
       res.send(200);
-    //   const { name, city, county, state, country, zip, issues, candidate, campaign} = document[0];
- 
-    //   res.send({
-    //     username: req.user.username,
-    //     userData: {name, city, county, state, country, zip },
-    //     issuesData: issues,
-    //     candidateData: {candidate, campaign},
-    //     matchesData: null, 
-    //     currentMatch: null
-    //   })
-    // .catch((err) => res.send(422).json(err));
-});
+    }).catch((err) => res.send(422).json(err));
 });
 
 

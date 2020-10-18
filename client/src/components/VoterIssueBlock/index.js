@@ -11,7 +11,8 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import "./index.css";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import { useStoreContext } from '../../store/store';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -38,6 +39,18 @@ const useStyles = makeStyles((theme) => ({
 export default function VoterValuesBlock(props) {
     // console.log("VoterValuesBlock Props:", props.issues)
 
+    const [state, dispatch] = useStoreContext();
+
+    const handleUpdate = (event) => {
+    event.preventDefault();
+
+    console.log("state.issues")
+
+    axios.post("/api/users/update", {username: state.user, issues: state.issuesData})
+    .then(response => {console.log(response)});
+  
+  }
+
 
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -47,8 +60,8 @@ export default function VoterValuesBlock(props) {
     };
     return (
         <Card>
-
             <CardActions>
+            <h1 id="issues">Issues</h1>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,
@@ -61,10 +74,10 @@ export default function VoterValuesBlock(props) {
                 </IconButton>
             </CardActions>
 
-            <h1>Issues</h1>
+            
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                  <div id="issues-container">
-                <h1>Issues</h1>
+                
                 <div id="issues-grid">
                     <IssueHeader />
                     {props.issuesData.map(issue => {
@@ -73,7 +86,7 @@ export default function VoterValuesBlock(props) {
                     <IssueAdd />
                 </div>
             </div>
-
+            <button id="update-button" onClick={(event)=>handleUpdate(event)}>Update</button>
             </Collapse>
 
 
