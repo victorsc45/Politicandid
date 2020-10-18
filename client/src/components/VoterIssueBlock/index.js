@@ -15,21 +15,13 @@ import { useStoreContext } from '../../store/store';
 import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
-
     expand: {
         transform: 'rotate(0deg)',
         marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
+    },  
     expandOpen: {
         transform: 'rotate(180deg)',
     },
@@ -42,14 +34,10 @@ export default function VoterValuesBlock(props) {
     const [state, dispatch] = useStoreContext();
 
     const handleUpdate = (event) => {
-    event.preventDefault();
-
-    console.log("state.issues")
-
-    axios.post("/api/users/update", {username: state.user, issues: state.issuesData})
-    .then(response => {console.log(response)});
-  
-  }
+        event.preventDefault();
+        axios.post("/api/users/update", {username: state.user, issues: state.issuesData})
+        .then(response => {console.log(response)});
+    }
 
 
     const classes = useStyles();
