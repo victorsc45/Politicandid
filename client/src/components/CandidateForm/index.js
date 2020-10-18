@@ -5,7 +5,7 @@ import { lightBlue } from '@material-ui/core/colors';
 import "./index.css";
 
 
-export default function CandidateForm() {
+export default function CandidateForm(props) {
 
     const userNameRef = useRef();
 const cityRef = useRef();
@@ -29,11 +29,11 @@ const useStyles = makeStyles((theme) => ({
         <h3>Update Your Candidate Info</h3>
 
             < div id="form-block">
-                <TextField className="outlined-basic" ref={userNameRef} id="position" label="Position" variant="outlined" />
+                <TextField className="outlined-basic" ref={userNameRef} id="position" label="Position" placeholder={props.data.position} variant="outlined" />
                 <br />
-                <TextField className="outlined-basic" ref={cityRef} id="body" label="Body" variant="outlined" />
+                <TextField className="outlined-basic" ref={cityRef} id="body" label="Body" placeholder={props.data.body} variant="outlined" />
                 <br />
-                <TextField className="outlined-basic" ref={countyRef} id="level" label="Level" variant="outlined" />
+                <TextField className="outlined-basic" ref={countyRef} id="level" label="Level" placeholder={props.data.level} variant="outlined" />
                 <br />
             </div>
 

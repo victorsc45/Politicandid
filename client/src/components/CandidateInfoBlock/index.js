@@ -66,7 +66,7 @@ export default function CandidateInfoBlock(props) {
             </CardActions>
 
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                  <CandidateForm />
+                  <CandidateForm data={props.candidateData} />
 
             </Collapse>
 

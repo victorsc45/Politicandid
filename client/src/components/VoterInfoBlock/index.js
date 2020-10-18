@@ -78,7 +78,7 @@ export default function VoterInfoBlock(props) {
                      <li>State Update</li>
                      <li>Country Update</li>
                  </ul> */}
-                 <VoterForm />
+                 <VoterForm data={props.userData}/>
 
             </Collapse>
 
