@@ -21,6 +21,7 @@ const Login = () => {
     setLoginCreds({ ...loginCreds, [name]: value });
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -35,7 +36,14 @@ const Login = () => {
         if (response.status === 200) {
           console.log("LOGIN SET USER");
           console.log("Response from Database at Login", response.data);
-          dispatch({ type: SET_USER, user: response.data.username, data: response.data.data });
+
+          dispatch({ type: SET_USER, 
+            user: response.data.username, 
+            userData: response.data.userData,
+            issuesData: response.data.issuesData,
+            candidateData: response.data.candidateData,
+          });
+
           history.replace('/');
         }
       })

@@ -6,6 +6,7 @@ export const LOGOUT = 'LOGOUT';
 export const SET_USER = 'SET_USER';
 export const UNSET_USER = 'UNSET_USER';
 
+export const UPDATE_ALL_DATA = "UPDATE_ALL_DATA";
 export const UPDATE_USER_DATA = "UPDATE_USER_DATA";
 export const UPDATE_ISSUES_DATA = "UPDATE_ISSUES_DATA";
 export const UPDATE_CANDIDATE_DATA = "UPDATE_CANDIDATE_DATA";

@@ -10,18 +10,19 @@ import CardContent from "@material-ui/core/CardContent";
 // import { StoreProvider } from "../../store/store";
 
 const Home = (props) => {
-  // const [state, dispatch] = useStoreContext();
-  console.log("Home Props", props.state.data)
+
+  console.log("Home Component Props", props.state)
   // const data = API.getFakeData();
+
   return (<div id="home-container">
 
     <Card >
       <CardContent>
-        <VoterInfoBlock info={props.state.data} />
+        <VoterInfoBlock userData={props.state.userData} candidateData={props.state.candidateData} />
       </CardContent>
       <CardContent>
 
-        <VoterIssueBlock issues={props.state.data} />
+        <VoterIssueBlock issuesData={props.state.issuesData} />
 
       </CardContent>
     </Card>

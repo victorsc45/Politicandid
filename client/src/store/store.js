@@ -22,9 +22,7 @@ const reducer = (state, action) => {
         loading: false,
         userData: action.userData, 
         issuesData: action.issuesData,
-        candidateData: action.candidateData,
-        matchesData: action.matchesData,
-        currentMatch: action.currentMatch
+        candidateData: action.candidateData
       };
     
     case UNSET_USER:
@@ -38,6 +36,20 @@ const reducer = (state, action) => {
         candidateData: null,
         matchesData: null,
         currentMatch: null
+      };
+
+
+    case UPDATE_ALL_DATA: 
+      console.log("Reducer - Update All Data",action);
+      return {
+        ...state,
+        user: action.user,
+        loading: false,
+        userData: action.userData, 
+        issuesData: action.issuesData,
+        candidateData: action.candidateData,
+        matchesData: action.matchesData,
+        currentMatch: action.currentMatch
       };
 
     case UPDATE_USER_DATA: 
