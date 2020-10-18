@@ -42,9 +42,11 @@ const useStyles = makeStyles((theme) => ({
             </div>
 
 
-            <button id="update-info-button">Update Voter Info</button>
+            <button className="update-info-button">Update Voter Info</button>
             <br />
-            <button id="update-info-button">Delete Account</button>
+            <button className="update-info-button">Add Candidacy</button>
+            <br />
+            <button className="update-info-button">Delete Account</button>
 
         </form>
     );

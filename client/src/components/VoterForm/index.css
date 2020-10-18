@@ -17,14 +17,14 @@
   margin: 10px;
 }
 
-#update-info-button {
+.update-info-button {
   border: 1px solid black;
   background: lightgrey;
   border-radius: 5px;
   color: blue;
 }
 
-#update-info-button:hover {
+.update-info-button:hover {
   color: white;
   background: blue;
 }
