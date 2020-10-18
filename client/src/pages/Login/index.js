@@ -6,9 +6,13 @@ import { useStoreContext } from '../../store/store';
 import "./index.css";
 import tourists from '../../components/video/tourists.mp4'
 
+
+
+
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
+
 
   const [loginCreds, setLoginCreds] = useState({
     username: '',
@@ -47,6 +51,7 @@ const Login = () => {
 
   return (
     <div>
+    
       <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       
       <div id="login-container">

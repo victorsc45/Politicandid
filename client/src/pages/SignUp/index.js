@@ -57,8 +57,7 @@ const SignUp = () => {
           <source src={tourists} type="video/mp4" />
         </video>
         <div className="text-center">
-          <h1><span class="politi">Politi</span>
-            <span class="candid">Candid</span></h1>
+          
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
               Email address
