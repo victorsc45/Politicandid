@@ -8,7 +8,7 @@ function IssueRow(props) {
     const { issue, stance, important } = props.issueData;
     return <div className="issue-row">
         <h6 className="issue-name">{issue}</h6>
-        <Slider className="issue-stance" stance={stance} />
+        <Slider className="issue-stance" stance={stance} issueName={issue}/>
         <Switch className="issue-important" important={important} issueName={issue} />
     </div>
 }
