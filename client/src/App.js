@@ -12,11 +12,14 @@ import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
 // import { StoreProvider } from './store/store';
 // import API from './utils/API'
+import PcComponent from './components/FadeIn/PcComponent'
+import { Spring } from 'react-spring'
 
 
 const App = () => {
   const history = useHistory();
   const [state, dispatch] = useStoreContext();
+  
 
   useEffect(() => {
     dispatch({ type: LOADING });
@@ -51,6 +54,7 @@ const App = () => {
             <Redirect to="/login" />
           </Switch>
         )}
+        <PcComponent/>
     </div>
   );
 };

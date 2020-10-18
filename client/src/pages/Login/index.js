@@ -47,7 +47,7 @@ const Login = () => {
 
   return (
     <div>
-      <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
+      <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       
       <div id="login-container">
         
@@ -66,8 +66,8 @@ const Login = () => {
           <source src={tourists} type="video/mp4" />
         </video>
         <div className="text-center">
-          <h1><span class="politi">Politi</span>
-          <span class="candid">Candid</span></h1>
+          <h1><span className="politi">Politi</span>
+          <span className="candid">Candid</span></h1>
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
               Email address
