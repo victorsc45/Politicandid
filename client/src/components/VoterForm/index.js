@@ -6,11 +6,14 @@ import { lightBlue } from '@material-ui/core/colors';
 import "./index.css";
 import { useStoreContext } from '../../store/store';
 import { UPDATE_USER_DATA } from '../../store/actions';
+import { Link, useHistory } from 'react-router-dom';
+import { LOADING, UNSET_USER } from '../../store/actions';
 
 export default function VoterForm(props) {
 
     console.log("VoterForm props:",props);
     const [state, dispatch] = useStoreContext();
+    const history = useHistory();
 
     const userNameRef = useRef();
     const cityRef = useRef();
@@ -80,6 +83,18 @@ export default function VoterForm(props) {
         props.reRender();
     }
 
+    const handleDeleteUser = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        // dispatch({ type: LOADING });
+        const body = {username: state.user};
+        console.log("User to be deleted", body);
+        axios.post('/api/users/delete', {username: state.user}).then((response) => console.log(response));
+        dispatch({ type: UNSET_USER });
+        history.replace('/login');
+    }
+
     return (
         <form className={classes.root} noValidate autoComplete="off">
         <h3>Update Your Voter Info</h3>
@@ -102,7 +117,7 @@ export default function VoterForm(props) {
             <br />
             {!state.candidateData.candidate ? (<button onClick = {(event)=>addCandidate(event)}className="update-info-button">Add Candidacy</button>) : (<></>)}
             {!state.candidateData.candidate ? (<br />) : <></>}
-            <button className="update-info-button">Delete Account</button>
+            <button onClick={(event)=> handleDeleteUser(event)} className="update-info-button">Delete Account</button>
 
         </form>
     );
