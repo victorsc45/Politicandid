@@ -4,10 +4,11 @@ import TextField from '@material-ui/core/TextField';
 import { lightBlue } from '@material-ui/core/colors';
 import "./index.css";
 import { useStoreContext } from '../../store/store';
+import axios from "axios";
 
 export default function CandidateForm(props) {
     const [state, dispatch] = useStoreContext();
-    const positionRef = useRef();
+    const officeRef = useRef();
     const bodyRef = useRef();
     const levelRef = useRef();
     
@@ -27,8 +28,8 @@ const updateInfo = (event) => {
     const currentInfo = state.candidateData.campaign[info];
     let currentRef; 
     switch (info) {
-        case "position":
-            currentRef = positionRef;
+        case "office":
+            currentRef = officeRef;
             break;
         case "body":
             currentRef = bodyRef;
@@ -45,12 +46,37 @@ const updateInfo = (event) => {
 
     const classes = useStyles();
 
+    const handleUpdate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        const body = {
+            username: state.user, 
+            userData: state.userData,
+            issuesData: state.issuesData,
+            candidateData: state.candidateData
+        }
+        axios.post("/api/users/update", body)
+        .then(response => {console.log(response)});
+    }
+
+    const removeCandidate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        state.candidateData.candidate = false; 
+        state.candidateData.campaign = {office: null, body: null, level: null};
+        console.log("User is now a Candidate", state.candidateData.candidate)
+        handleUpdate();
+        props.reRender();
+    }
+
     return (
         <form className={classes.root} noValidate autoComplete="off">
         <h3>Update Your Candidate Info</h3>
 
             < div id="form-block">
-                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={positionRef} id="position" label="Position" placeholder={props.data.position} variant="outlined" />
+                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={officeRef} id="office" label="Office" placeholder={props.data.office} variant="outlined" />
                 <br />
                 <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={bodyRef} id="body" label="Body" placeholder={props.data.body} variant="outlined" />
                 <br />
@@ -59,9 +85,9 @@ const updateInfo = (event) => {
             </div>
 
 
-            <button className="update-info-button">Update Candidate Info</button>
+            <button onClick = {(event)=> handleUpdate(event)} className="update-info-button">Update Candidate Info</button>
             <br />
-            <button className="update-info-button">End Candidacy</button>
+            <button onClick={(event)=>removeCandidate(event)}className="update-info-button">End Candidacy</button>
             
 
         </form>

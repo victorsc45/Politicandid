@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { lightBlue } from '@material-ui/core/colors';
@@ -55,7 +56,29 @@ export default function VoterForm(props) {
         // console.log("User Data", state.userData);
     }
 
+    const handleUpdate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        const body = {
+            username: state.user, 
+            userData: state.userData,
+            issuesData: state.issuesData,
+            candidateData: state.candidateData
+        }
+        axios.post("/api/users/update", body)
+        .then(response => {console.log(response)});
+    }
 
+    const addCandidate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        state.candidateData.candidate = true; 
+        console.log("User is now a Candidate", state.candidateData.candidate)
+        handleUpdate();
+        props.reRender();
+    }
 
     return (
         <form className={classes.root} noValidate autoComplete="off">
@@ -75,10 +98,10 @@ export default function VoterForm(props) {
             </div>
 
 
-            <button className="update-info-button">Update Voter Info</button>
+            <button className="update-info-button" onClick={(event)=> handleUpdate(event)}>Update Voter Info</button>
             <br />
-            <button className="update-info-button">Add Candidacy</button>
-            <br />
+            {!state.candidateData.candidate ? (<button onClick = {(event)=>addCandidate(event)}className="update-info-button">Add Candidacy</button>) : (<></>)}
+            {!state.candidateData.candidate ? (<br />) : <></>}
             <button className="update-info-button">Delete Account</button>
 
         </form>

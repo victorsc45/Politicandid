@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import API from "../../utils/API";
 import "./index.css";
@@ -11,27 +11,32 @@ import { UPDATE_ALL_DATA } from '../../store/actions';
 
 // import { useStoreContext } from '../../store/store';
 // import { StoreProvider } from "../../store/store";
+import { useStoreContext } from '../../store/store';
 
-
-const Home = (props) => {
+function Home(props) {
   console.log("Home Component Props", props.state)
   // const data = API.getFakeData();
 
-  
+  const [state, dispatch] = useStoreContext();
+  const [comp, setComp] = React.useState(true);
 
+  const reRender = () => {
+    setComp(!comp);
+  }
+ 
   return (<div id="home-container">
 
     <Card >
       <CardContent>
-        <VoterInfoBlock userData={props.state.userData} />
+        <VoterInfoBlock reRender={reRender} userData={state.userData} />
       </CardContent>
 
-      {props.state.candidateData.candidate ? (<CardContent>
-        <CandidateInfoBlock candidateData={props.state.candidateData.campaign} />
+      {state.candidateData.candidate ? (<CardContent>
+        <CandidateInfoBlock reRender={reRender} candidateData={state.candidateData.campaign} />
       </CardContent>) : "" }
       
       <CardContent>
-        <VoterIssueBlock issuesData={props.state.issuesData} />
+        <VoterIssueBlock reRender={reRender} issuesData={state.issuesData} />
       </CardContent>
     </Card>
 

@@ -72,7 +72,7 @@ export default function VoterInfoBlock(props) {
 
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               
-                 <VoterForm data={props.userData}/>
+                 <VoterForm reRender={props.reRender} data={props.userData}/>
 
             </Collapse>
 
