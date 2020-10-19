@@ -27,12 +27,23 @@ const App = () => {
 
   useEffect(() => {
     dispatch({ type: LOADING });
+
     axios.get('/api/users').then((response) => {
+
       if (response.data.user) {
+
         console.log("APP SET USER");
-        console.log("APP Response", response);
-        dispatch({ type: SET_USER, user: response.data.user, data: response.data.data });
+        console.log("Response from Database on UseEffect from App Component", response);
+
+        dispatch({ type: SET_USER, 
+          user: response.data.username, 
+          userData: response.data.userData,
+          issuesData: response.data.issuesData,
+          candidateData: response.data.candidateData,
+        });
+        
         history.push('/');
+
       } else {
         console.log("APP UNSET USER");
         dispatch({ type: UNSET_USER });

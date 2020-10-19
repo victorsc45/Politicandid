@@ -12,7 +12,9 @@ const Seed = [
     country: "USA",
     username: "mitchell@underwood.com",
     password: "$2a$10$ma0MBuyBvsrA0YRZKYQf6uaLJVSLITsQAKIlwQuhNs509OLV5zWe6",
-    issues: [{issue: "Bunnies", stance: 5, important: true},{issue: "Kitties", stance: -5, important: true}]
+    issues: [{issue: "Bunnies", stance: 5, important: true},{issue: "Kitties", stance: -5, important: true}],
+    candidate: true, 
+    campaign: {level: "Local", body: "School Board", position: "School Board Chair"}
   },
   {
     name: "Luke Evans",

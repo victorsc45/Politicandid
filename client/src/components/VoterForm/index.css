@@ -1,0 +1,30 @@
+#form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#location-block h4 {
+  margin: 20px;
+}
+
+#user-name {
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.outlined-basic {
+  margin: 10px;
+}
+
+.update-info-button {
+  border: 1px solid black;
+  background: lightgrey;
+  border-radius: 5px;
+  color: blue;
+}
+
+.update-info-button:hover {
+  color: white;
+  background: blue;
+}

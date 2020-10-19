@@ -16,3 +16,11 @@
   margin-left: 10px;
   color: rgb(87, 87, 87);
 }
+
+.delete-button {
+  margin-left: 20px;
+  margin-top: 10px;
+  border: none;
+  color: red;
+  font-weight: bolder;
+}

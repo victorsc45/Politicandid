@@ -14,3 +14,21 @@
   /* border: 1px solid black; */
   padding: 10px;
 }
+
+#update-button {
+  position: relative;
+  left: 670px;
+  bottom: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: blue;
+}
+
+#update-button:hover {
+  color: white;
+  background: blue;
+}
+
+#issues {
+  margin-left: 300px;
+}

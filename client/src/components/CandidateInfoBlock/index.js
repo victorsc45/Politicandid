@@ -1,18 +1,17 @@
-import React from 'react';
-import "./index.css";
-import IssueRow from "../IssueRow/index";
-import IssueHeader from "../../components/IssueHeader";
-import IssueAdd from "../../components/IssueAdd";
+import React from "react";
 import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import "./index.css";
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import clsx from 'clsx';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import "./index.css";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useStoreContext } from '../../store/store';
+import CandidateForm from "../CandidateForm/index";
 import axios from 'axios';
+import VoterForm from "../VoterForm/index";
 
 const useStyles = makeStyles((theme) => ({
     expand: {
@@ -28,28 +27,32 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function VoterValuesBlock(props) {
-    // console.log("VoterValuesBlock Props:", props.issues)
+export default function CandidateInfoBlock(props) {
+
 
     const [state, dispatch] = useStoreContext();
-
-    const handleUpdate = (event) => {
-        event.preventDefault();
-        axios.post("/api/users/update", {username: state.user, issues: state.issuesData})
-        .then(response => {console.log(response)});
-    }
-
-
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
+
     return (
         <Card>
-            <CardActions>
-            <h1 id="issues">Issues</h1>
+            <CardContent>
+
+                <div id="candidate-block">
+                    <h4>Position: {props.candidateData.position} </h4>
+                    <h4>Body: {props.candidateData.body}</h4>
+                    <h4>Level: {props.candidateData.level}</h4>
+                </div>
+
+     
+
+                <CardActions>
+
+                <button id="voter-button">Candidate</button>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,
@@ -62,23 +65,12 @@ export default function VoterValuesBlock(props) {
                 </IconButton>
             </CardActions>
 
-            
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                 <div id="issues-container">
-                
-                <div id="issues-grid">
-                    <IssueHeader />
-                    {props.issuesData.map(issue => {
-                    return <IssueRow key={issue.issue} issueData={issue} />
-                    })}
-                    <IssueAdd />
-                </div>
-            </div>
-            <button id="update-button" onClick={(event)=>handleUpdate(event)}>Update</button>
+                  <CandidateForm data={props.candidateData} />
+
             </Collapse>
 
+            </CardContent>
 
-        </Card>
-    );
+        </Card>);
 }
-
