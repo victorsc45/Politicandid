@@ -1,15 +1,19 @@
 import React, { useRef } from 'react';
+import axios from "axios";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { lightBlue } from '@material-ui/core/colors';
 import "./index.css";
 import { useStoreContext } from '../../store/store';
 import { UPDATE_USER_DATA } from '../../store/actions';
+import { Link, useHistory } from 'react-router-dom';
+import { LOADING, UNSET_USER } from '../../store/actions';
 
 export default function VoterForm(props) {
 
     console.log("VoterForm props:",props);
     const [state, dispatch] = useStoreContext();
+    const history = useHistory();
 
     const userNameRef = useRef();
     const cityRef = useRef();
@@ -55,7 +59,41 @@ export default function VoterForm(props) {
         // console.log("User Data", state.userData);
     }
 
+    const handleUpdate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        const body = {
+            username: state.user, 
+            userData: state.userData,
+            issuesData: state.issuesData,
+            candidateData: state.candidateData
+        }
+        axios.post("/api/users/update", body)
+        .then(response => {console.log(response)});
+    }
 
+    const addCandidate = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        state.candidateData.candidate = true; 
+        console.log("User is now a Candidate", state.candidateData.candidate)
+        handleUpdate();
+        props.reRender();
+    }
+
+    const handleDeleteUser = (event) => {
+        if (event) {
+            event.preventDefault();
+        }
+        // dispatch({ type: LOADING });
+        const body = {username: state.user};
+        console.log("User to be deleted", body);
+        axios.post('/api/users/delete', {username: state.user}).then((response) => console.log(response));
+        dispatch({ type: UNSET_USER });
+        history.replace('/login');
+    }
 
     return (
         <form className={classes.root} noValidate autoComplete="off">
@@ -75,11 +113,11 @@ export default function VoterForm(props) {
             </div>
 
 
-            <button className="update-info-button">Update Voter Info</button>
+            <button className="update-info-button" onClick={(event)=> handleUpdate(event)}>Update Voter Info</button>
             <br />
-            <button className="update-info-button">Add Candidacy</button>
-            <br />
-            <button className="update-info-button">Delete Account</button>
+            {!state.candidateData.candidate ? (<button onClick = {(event)=>addCandidate(event)}className="update-info-button">Add Candidacy</button>) : (<></>)}
+            {!state.candidateData.candidate ? (<br />) : <></>}
+            <button onClick={(event)=> handleDeleteUser(event)} className="update-info-button">Delete Account</button>
 
         </form>
     );

@@ -23,10 +23,24 @@ const passport = require('../../passport');
   
 // });
 
+router.post("/delete", (req, res) => {
+  console.log("User to be deleted", req.body);
+  User.deleteOne({username: req.body.username}).then(() => res.send(200)).catch((err) => res.send(422).json(err));
+});
+
 router.post("/update", (req, res) => {
-  const { username, issues } = req.body;
   console.log("Username on update route", req.body);
-  User.findOneAndUpdate({ username: req.body.username }, {$set: {issues: req.body.issues}},{new:true})
+  User.findOneAndUpdate({ username: req.body.username }, 
+    {$set: {
+      name: req.body.userData.name, 
+      city: req.body.userData.city,
+      county: req.body.userData.county,
+      state: req.body.userData.state, 
+      country: req.body.userData.country,
+      issues: req.body.issuesData,
+      candidate: req.body.candidateData.candidate,
+      campaign: req.body.candidateData.campaign 
+    }},{new:true})
     .then((document) => {
       console.log("document after update:", document);
       res.send(200);
