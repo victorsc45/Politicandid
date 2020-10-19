@@ -4,11 +4,16 @@ import { useHistory } from 'react-router-dom';
 import { LOADING, SET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
+import logo from '../../components/video/PolitiCandid_logo.png';
 import tourists from '../../components/video/tourists.mp4'
+
+
+
 
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
+
 
   const [loginCreds, setLoginCreds] = useState({
     username: '',
@@ -55,10 +60,12 @@ const Login = () => {
 
   return (
     <div>
-      <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
+    
+      <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       
+
       <div id="login-container">
-        
+
         <video autoPlay loop muted
           style={{
             position: "absolute",
@@ -73,9 +80,16 @@ const Login = () => {
         >
           <source src={tourists} type="video/mp4" />
         </video>
-        <div className="text-center">
-          <h1><span class="politi">Politi</span>
-          <span class="candid">Candid</span></h1>
+
+        <div className="logo-center" id="logo">
+          <img src={logo} alt="PolitiCand"
+            style={{
+              position: "center",
+              width: "100%",
+              top: "80%"
+            }}
+          />
+
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
               Email address
