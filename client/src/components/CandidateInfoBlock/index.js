@@ -43,7 +43,7 @@ export default function CandidateInfoBlock(props) {
             <CardContent>
 
                 <div id="candidate-block">
-                    <h4>Position: {props.candidateData.position} </h4>
+                    <h4>Office: {props.candidateData.office} </h4>
                     <h4>Body: {props.candidateData.body}</h4>
                     <h4>Level: {props.candidateData.level}</h4>
                 </div>

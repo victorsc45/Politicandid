@@ -35,7 +35,13 @@ export default function VoterValuesBlock(props) {
 
     const handleUpdate = (event) => {
         event.preventDefault();
-        axios.post("/api/users/update", {username: state.user, issues: state.issuesData})
+        const body = {
+            username: state.user, 
+            userData: state.userData,
+            issuesData: state.issuesData,
+            candidateData: state.candidateData
+        }
+        axios.post("/api/users/update", body)
         .then(response => {console.log(response)});
     }
 
