@@ -1,0 +1,29 @@
+.match-row {
+  background: white;
+  color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 600px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.match-name {
+  display: inline-block;
+  width: 300px;
+  font-weight: bolder;
+}
+
+.match-candidate {
+  display: flex;
+  flex-direction: row;
+}
+
+.match-candidate p {
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+}

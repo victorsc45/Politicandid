@@ -16,10 +16,13 @@ export default {
           }
     },
     getFakeMatches: function() {
-        return {
-            Candidates: [{name: "Mitchell Underwood", _id: "98098098"}, {name: "Matthew Neal", _id: "8989787838"}],
-            Users: [{name: "Luke Evans", _id: "98098088787"},{name: "Victor Litzau", _id: "35257205397"}]
-        }
+        return (
+           [
+           {username: 'm@u.com', name: "Mitchell Underwood", candidate: false},
+           {username: 'N@P.com', name: "Noel Preston", candidate: false},
+           {username: 'T@Z.com', name: "Teddy Zoller", candidate: true, office: "Teacher", body: "school", level: "Local"},
+           {username: 'F@W.com', name: "Frederick White", candidate: true, office: "Leader", body: "FDC", level: "National"}]
+        );
     }
 
 };
