@@ -24,7 +24,8 @@ const Seed = [
     country: "USA",
     username: "luke@evans.com",
     password: "$2a$10$6hxNMqK/ITjkrfClBtH7TeV1lCwEcfRddO8.sBBDEogvuGh06qtRK",
-    issues: [{ issue: "Fortnight", stance: 5, important: true }, { issue: "Tiger King", stance: -5, important: true }]
+    issues: [{ issue: "Fortnight", stance: 5, important: true }, { issue: "Tiger King", stance: -5, important: true }],
+    candidate: false
   },
   {
     name: "Matthew Neal",
@@ -34,7 +35,8 @@ const Seed = [
     country: "USA",
     username: "matthew@neal.com",
     password: "$2a$10$r0ldOGYNx555jgQUn.8.y.mWv/rZiNms7EDwuNpxH2khaSfx5V8pq",
-    issues: [{ issue: "Cycling", stance: 5, important: true }, { issue: "Printing", stance: -5, important: true }]
+    issues: [{ issue: "Cycling", stance: 5, important: true }, { issue: "Printing", stance: -5, important: true }],
+    candidate: false
   },
   {
     name: "Victor Litzau",
@@ -44,7 +46,8 @@ const Seed = [
     country: "USA",
     username: "victor@litzau.com",
     password: "$2a$10$5RmszFBpPRG0rLb18ngDy.K/sMoATHNpa25SHGdTGyPdpYG56gn9C",
-    issues: [{ issue: "Airbrushing", stance: 5, important: true }, { issue: "Charleston", stance: -5, important: true }]
+    issues: [{ issue: "Airbrushing", stance: 5, important: true }, { issue: "Charleston", stance: -5, important: true }],
+    candidate: false
   },
   {
     name: "Barack Obama",
@@ -66,7 +69,8 @@ const Seed = [
     country: "USA",
     username: "Adolf@Hitler.com",
     password: "$2a$10$Rie2O8zEaKN5.G0kVPGrz.Me.f9Qmg6D8CRIQc7SokjIQIHlN1rNi",
-    issues: [{ issue: "LGBT Rights", stance: -10, important: true }, { issue: "Government Mandates", stance: 10, important: true }, { issue: "First Amendment", stance: -10, important: true }, { issue: "Gun Control", stance: 10, important: true }, { issue: "Net Neutrality", stance: 9, important: true }, { issue: "Government Healthcare", stance: 10, important: true }]
+    issues: [{ issue: "LGBT Rights", stance: -10, important: true }, { issue: "Government Mandates", stance: 10, important: true }, { issue: "First Amendment", stance: -10, important: true }, { issue: "Gun Control", stance: 10, important: true }, { issue: "Net Neutrality", stance: 9, important: true }, { issue: "Government Healthcare", stance: 10, important: true }],
+    candidate: false
   },
   {
     name: "Cardi B",

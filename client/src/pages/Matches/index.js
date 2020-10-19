@@ -1,5 +1,5 @@
 // import axios from "axios";
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./index.css"
 import API from "../../utils/API";
 // import { useState } from "react";
@@ -10,11 +10,12 @@ import axios from "axios";
 import { UPDATE_MATCHES_DATA } from '../../store/actions';
 
 const MatchesPage = () => {
-  const data = API.getFakeMatches();
+  // const data = API.getFakeMatches();
+  let [data, setData] = useState([]);
   console.log("Matches Page Data", data);
   const [state, dispatch] = useStoreContext();
 
-
+useEffect(()=> {
   axios.get("api/users/get_matches", {username: state.user}).then(response => {
     console.log("Matches Raw Data", response);
     
@@ -29,8 +30,18 @@ const MatchesPage = () => {
        userScore += issueScore(issue, current_user_issues);
       })
 
+      let office = null;
+      let body = null;
+      let level = null;
       
-      return {name: other_user.name, username: other_user.username, score: Math.floor(userScore), candidate: other_user.candidate}
+      if (other_user.candidate) {
+        office = other_user.campaign.office;
+        body = other_user.campaign.body;
+        level = other_user.campaign.level;
+      }
+      let match_object = {name: other_user.name, username: other_user.username, score: Math.floor(userScore), candidate: other_user.candidate, office: office, body: body, level: level};
+      
+      return match_object
     }
     )
 
@@ -38,11 +49,13 @@ const MatchesPage = () => {
       return b.score-a.score;
     })
 
-    console.log(sorted_data);
-
+    console.log("Sorted Data",sorted_data);
+    setData(sorted_data);
     // dispatch({type: UPDATE_MATCHES_DATA, matchesData: sorted_data});
 
   })
+
+  }, []);
 
   function issueScore(currentIssue, list) {
     let score = 0;
@@ -72,8 +85,6 @@ const MatchesPage = () => {
     return score;
   } 
 
-  const candidate_matches = data.filter(match => match.candidate);
-  const user_matches = data.filter(match => !match.candidate)
   
 
   return (
@@ -81,7 +92,7 @@ const MatchesPage = () => {
         <div className="matches-container">
           <h2>Candidates</h2>
           <div className="list-container">
-            {candidate_matches.map(candidate => {
+            {data.filter(match => match.candidate).map(candidate => {
               return <MatchRow match={candidate} />
             })}
           </div>
@@ -90,7 +101,7 @@ const MatchesPage = () => {
         <div className="matches-container">
           <h2>Users</h2>
           <div className="list-container">
-          {user_matches.map(candidate => {
+          {data.filter(match => !match.candidate).map(candidate => {
               return <MatchRow match={candidate} />
             })}
           </div>
