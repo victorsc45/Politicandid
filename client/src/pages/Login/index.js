@@ -63,8 +63,8 @@ const Login = () => {
 
   return (
     <div>
-      <animated.div style={props}><PcComponent /><h1><span class="candid">Politics</span>
-        <span class="politi">Simplified</span></h1></animated.div>
+      {/* <animated.div style={props}><PcComponent /><h1><span class="candid">Politics</span>
+        <span class="politi">Simplified</span></h1></animated.div> */}
       <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
 
       <div id="login-container">
