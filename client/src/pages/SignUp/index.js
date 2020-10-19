@@ -2,7 +2,10 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "./index.css";
-import tourists from '../../components/video/tourists.mp4'
+import tourists from '../../components/video/tourists.mp4';
+import { Spring } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
+import PcComponent from '../../components/FadeIn/PcComponent';
 
 const SignUp = () => {
   const history = useHistory();

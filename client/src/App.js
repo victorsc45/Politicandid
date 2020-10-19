@@ -21,9 +21,6 @@ import { useSpring, animated } from 'react-spring';
 const App = () => {
   const history = useHistory();
   const [state, dispatch] = useStoreContext();
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
-  const AnimatedPc = animated(PcComponent)
-
 
   useEffect(() => {
     dispatch({ type: LOADING });
@@ -53,7 +50,6 @@ const App = () => {
   }, [dispatch, history]);
 
   return (
-    <div>
       <div>
         <Navbar />
 
@@ -71,10 +67,6 @@ const App = () => {
               <Redirect to="/login" />
             </Switch>
           )}
-
-      </div>
-      <animated.div style={props}><PcComponent/><h1><span class="candid">Politics</span>
-        <span class="politi">Simplified</span></h1></animated.div>
     </div>
   );
 };
