@@ -23,6 +23,14 @@ const passport = require('../../passport');
   
 // });
 
+router.get("/get_matches", (req,res) => {
+    User.find({username : {$ne: req.body.username}},'username name issues candidate campaign').then(users => {
+      // console.log("users", users);
+      res.send(users);
+    });
+  });
+
+
 router.post("/delete", (req, res) => {
   console.log("User to be deleted", req.body);
   User.deleteOne({username: req.body.username}).then(() => res.send(200)).catch((err) => res.send(422).json(err));
