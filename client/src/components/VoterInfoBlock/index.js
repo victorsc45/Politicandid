@@ -71,13 +71,7 @@ export default function VoterInfoBlock(props) {
             </CardActions>
 
             <Collapse in={expanded} timeout="auto" unmountOnExit>
-                 {/* <h1>Voter Info Update form here</h1>
-                 <ul>
-                     <li>City Update</li>
-                     <li>County Update</li>
-                     <li>State Update</li>
-                     <li>Country Update</li>
-                 </ul> */}
+              
                  <VoterForm data={props.userData}/>
 
             </Collapse>

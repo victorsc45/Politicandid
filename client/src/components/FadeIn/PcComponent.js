@@ -1,5 +1,5 @@
 import React from 'react'
-import politicandid from "../images/PolitiCandid.png";
+import politicandid from "../images/politicandid.png";
 
 
 export default function PcComponent() {
