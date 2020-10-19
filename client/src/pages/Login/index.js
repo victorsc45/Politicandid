@@ -4,15 +4,17 @@ import { useHistory } from 'react-router-dom';
 import { LOADING, SET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
-import logo from '../../components/video/PolitiCandid_logo.png';
 import tourists from '../../components/video/tourists.mp4'
-
+import PcComponent from '../../components/FadeIn/PcComponent';
+import { useSpring, animated } from 'react-spring';
 
 
 
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
+  const AnimatedPc = animated(PcComponent)
 
 
   const [loginCreds, setLoginCreds] = useState({
@@ -42,8 +44,9 @@ const Login = () => {
           console.log("LOGIN SET USER");
           console.log("Response from Database at Login", response.data);
 
-          dispatch({ type: SET_USER, 
-            user: response.data.username, 
+          dispatch({
+            type: SET_USER,
+            user: response.data.username,
             userData: response.data.userData,
             issuesData: response.data.issuesData,
             candidateData: response.data.candidateData,
@@ -60,9 +63,9 @@ const Login = () => {
 
   return (
     <div>
-    
+      <animated.div style={props}><PcComponent /><h1><span class="candid">Politics</span>
+        <span class="politi">Simplified</span></h1></animated.div>
       <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
-      
 
       <div id="login-container">
 
@@ -80,15 +83,6 @@ const Login = () => {
         >
           <source src={tourists} type="video/mp4" />
         </video>
-
-        <div className="logo-center" id="logo">
-          <img src={logo} alt="PolitiCand"
-            style={{
-              position: "center",
-              width: "100%",
-              top: "80%"
-            }}
-          />
 
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
@@ -121,8 +115,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </div>
-
   );
 };
 

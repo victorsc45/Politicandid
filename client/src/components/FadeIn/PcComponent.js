@@ -1,17 +1,12 @@
 import React from 'react'
-import politicandid from "../images/politicandid.png";
-import { useSpring, animated } from 'react-spring'
+import politicandid from "../images/PolitiCandid.png";
 
 
 export default function PcComponent() {
   
 
     return (
-
-
-        <img src={politicandid} alt="Politicandid Logo" />
-
-
+        <img src={politicandid} alt="Politicandid Logo" />  
     )
 }
 
