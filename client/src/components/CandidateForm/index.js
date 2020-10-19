@@ -3,16 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { lightBlue } from '@material-ui/core/colors';
 import "./index.css";
-
+import { useStoreContext } from '../../store/store';
 
 export default function CandidateForm(props) {
-
-    const userNameRef = useRef();
-const cityRef = useRef();
-const countyRef = useRef();
-const stateRef = useRef();
-const countryRef = useRef();
-const useStyles = makeStyles((theme) => ({
+    const [state, dispatch] = useStoreContext();
+    const positionRef = useRef();
+    const bodyRef = useRef();
+    const levelRef = useRef();
+    
+    const useStyles = makeStyles((theme) => ({
     root: {
         '& > *': {
             margin: theme.spacing(1),
@@ -22,6 +21,28 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const updateInfo = (event) => {
+    // console.log("target id", event.target.getAttribute("id"));
+    const info = event.target.getAttribute("id");
+    const currentInfo = state.candidateData.campaign[info];
+    let currentRef; 
+    switch (info) {
+        case "position":
+            currentRef = positionRef;
+            break;
+        case "body":
+            currentRef = bodyRef;
+            break; 
+        case "level":
+            currentRef = levelRef;
+            break; 
+
+    }
+    const newInfo = currentRef.current.childNodes[1].firstChild.value;
+    state.candidateData.campaign[info] = newInfo;
+    // console.log("Candidate Data", state.candidateData);
+}
+
     const classes = useStyles();
 
     return (
@@ -29,11 +50,11 @@ const useStyles = makeStyles((theme) => ({
         <h3>Update Your Candidate Info</h3>
 
             < div id="form-block">
-                <TextField className="outlined-basic" ref={userNameRef} id="position" label="Position" placeholder={props.data.position} variant="outlined" />
+                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={positionRef} id="position" label="Position" placeholder={props.data.position} variant="outlined" />
                 <br />
-                <TextField className="outlined-basic" ref={cityRef} id="body" label="Body" placeholder={props.data.body} variant="outlined" />
+                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={bodyRef} id="body" label="Body" placeholder={props.data.body} variant="outlined" />
                 <br />
-                <TextField className="outlined-basic" ref={countyRef} id="level" label="Level" placeholder={props.data.level} variant="outlined" />
+                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={levelRef} id="level" label="Level" placeholder={props.data.level} variant="outlined" />
                 <br />
             </div>
 
