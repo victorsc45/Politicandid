@@ -1,3 +1,19 @@
+#page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+#match-profile {
+  border: 1px solid black;
+  margin: 20px;
+  margin-right: 40px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 #big-container {
   display: flex;
   flex-direction: column;
@@ -6,5 +22,10 @@
 }
 
 .matches-container {
-  padding-top: 30px;
+  /* padding-top: 30px; */
+}
+
+.list-container {
+  max-height: 300px;
+  overflow-y: scroll;
 }

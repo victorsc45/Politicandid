@@ -24,7 +24,7 @@ const passport = require('../../passport');
 // });
 
 router.get("/get_matches", (req,res) => {
-    User.find({username : {$ne: req.body.username}},'username name issues candidate campaign').then(users => {
+    User.find({username : {$ne: req.body.username}},'username name issues candidate campaign city state country county').then(users => {
       // console.log("users", users);
       res.send(users);
     });
