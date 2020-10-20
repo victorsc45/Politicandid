@@ -9,7 +9,6 @@ import PcComponent from '../../components/FadeIn/PcComponent';
 import { useSpring, animated } from 'react-spring';
 
 
-
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
@@ -63,13 +62,8 @@ const Login = () => {
 
   return (
     <div>
-      
-      <animated.div style={props}><PcComponent /></animated.div>
-
-      <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
-
       <div id="login-container">
-
+        <animated.div style={props}><PcComponent /></animated.div>
         <video autoPlay loop muted
           style={{
             position: "absolute",
@@ -85,37 +79,39 @@ const Login = () => {
           <source src={tourists} type="video/mp4" />
         </video>
 
-          <form className="form-signin">
-            <label htmlFor="inputEmail" className="sr-only">
-              Email address
+        <form className="form-signin">
+          <label htmlFor="inputEmail" className="sr-only">
+            Email address
         </label>
-            <input
-              type="email"
-              id="inputEmail"
-              className="form-control"
-              name="username"
-              placeholder="Email address"
-              value={loginCreds.username}
-              onChange={handleChange}
-            />
-            <label htmlFor="inputPassword" className="sr-only">
-              Password
+          <input
+            type="email"
+            id="inputEmail"
+            className="form-control"
+            name="username"
+            placeholder="Email address"
+            value={loginCreds.username}
+            onChange={handleChange}
+          />
+          <label htmlFor="inputPassword" className="sr-only">
+            Password
         </label>
-            <input
-              type="password"
-              id="inputPassword"
-              className="form-control"
-              name="password"
-              placeholder="Password"
-              value={loginCreds.password}
-              onChange={handleChange}
-            />
-            <button className="btn btn-lg btn-warning btn-block" type="submit" onClick={handleSubmit}>
-              Login
+          <input
+            type="password"
+            id="inputPassword"
+            className="form-control"
+            name="password"
+            placeholder="Password"
+            value={loginCreds.password}
+            onChange={handleChange}
+          />
+          <button className="btn btn-lg btn-warning btn-block" type="submit" onClick={handleSubmit}>
+            Login
         </button>
-          </form>
-        </div>
+        </form>
+        <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       </div>
+    </div>
+
   );
 };
 

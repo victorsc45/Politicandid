@@ -45,10 +45,8 @@ const SignUp = () => {
 
   return (
     <div>
-
-      <animated.div style={props}><PcComponent /></animated.div>
-      <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       <div id="signup-container">
+        <animated.div style={props}><PcComponent /></animated.div>
         <video autoPlay loop muted
           style={{
             position: "absolute",
@@ -94,6 +92,7 @@ const SignUp = () => {
               Sign Up
         </button>
           </form>
+          <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
         </div>
       </div>
     </div>
