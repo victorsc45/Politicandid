@@ -97,10 +97,11 @@ export default function VoterForm(props) {
 
     return (
         <form className={classes.root} noValidate autoComplete="off">
-        <h3>Update Your Voter Info</h3>
+        <h3 style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>Update Your Voter Info</h3>
 
             < div id="form-block">
-                <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={userNameRef}  placeholder={props.data.name} id="name" label="Name" variant="outlined" />
+                <TextField style={{ backgroundColor: '#8F6300' }} className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={userNameRef}  placeholder={props.data.name} id="name" label="Name" variant="outlined" />
                 <br />
                 <TextField className="outlined-basic" onChange={(event) => {updateInfo(event)}} ref={cityRef} placeholder={props.data.city} id="city" label="City" variant="outlined" />
                 <br />

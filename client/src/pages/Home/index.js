@@ -36,8 +36,8 @@ function Home(props) {
             }}
     >...
       <div id="home-container">
-        <Card style={{backgroundColor:'#E59E00'}}>
-          <CardContent style={{backgroundColor:'#E59E00'}}>
+        <Card style={{backgroundColor:'#030303'}}>
+          <CardContent>
             <VoterInfoBlock reRender={reRender} userData={state.userData} />
           </CardContent>
 
@@ -45,7 +45,7 @@ function Home(props) {
             <CandidateInfoBlock reRender={reRender} candidateData={state.candidateData.campaign} />
           </CardContent>) : ""}
 
-          <CardContent>
+          <CardContent >
             <VoterIssueBlock reRender={reRender} issuesData={state.issuesData} />
           </CardContent>
         </Card>

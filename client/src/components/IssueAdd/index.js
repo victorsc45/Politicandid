@@ -24,7 +24,8 @@ export default function IssueAdd() {
     
       }
 
-    return <div className="issue-add">
+    return <div className="issue-add" style={{ backgroundColor: '#080808',
+    color: '#84001C'}}>
         <div className="issue-name">
             <textarea className="issue-name-area" rows="1" ref={textRef} />
         </div>

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
-    },  
+    },
     expandOpen: {
         transform: 'rotate(180deg)',
     },
@@ -39,17 +39,22 @@ export default function VoterInfoBlock(props) {
     };
 
     return (
-        <Card>
+        <Card style={{ backgroundColor: '#071C61' }}>
             <CardContent>
 
-                <h1 id="user-name">{props.userData.name}</h1>
+                <h1 id="user-name" style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>{props.userData.name}</h1>
 
                 {/* Always render */}
                 <div id="location-block">
-                    <h4>City: {props.userData.city}</h4>
-                    <h4>County: {props.userData.county} </h4>
-                    <h4>State: {props.userData.state} </h4>
-                    <h4>Country: {props.userData.country} </h4>
+                    <h4 style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>City: {props.userData.city}</h4>
+                    <h4 style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>County: {props.userData.county} </h4>
+                    <h4 style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>State: {props.userData.state} </h4>
+                    <h4 style={{ backgroundColor: '#080808',
+                color: '#84001C'}}>Country: {props.userData.country} </h4>
                 </div>
 
                 {/* have a second block with candidate info if the person is a candidate */}
@@ -57,24 +62,24 @@ export default function VoterInfoBlock(props) {
                 <CardActions>
 
                     {/* make this button's wording dependent on if the user is just a voter or a candidate */}
-                <button id="voter-button">Voter</button>
-                <IconButton
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
-                    })}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon />
-                </IconButton>
-            </CardActions>
+                    <button id="voter-button">Voter</button>
+                    <IconButton
+                        className={clsx(classes.expand, {
+                            [classes.expandOpen]: expanded,
+                        })}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon />
+                    </IconButton>
+                </CardActions>
 
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-              
-                 <VoterForm reRender={props.reRender} data={props.userData}/>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
 
-            </Collapse>
+                    <VoterForm reRender={props.reRender} data={props.userData} />
+
+                </Collapse>
 
             </CardContent>
 

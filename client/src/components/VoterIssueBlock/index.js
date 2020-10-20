@@ -53,9 +53,10 @@ export default function VoterValuesBlock(props) {
         setExpanded(!expanded);
     };
     return (
-        <Card>
+        <Card style={{ backgroundColor: '#071C61' }}>
             <CardActions>
-            <h1 id="issues">Issues</h1>
+            <h1 style={{ backgroundColor: '#080808',
+                color: '#84001C'}} id="issues">Issues</h1>
                 <IconButton
                     className={clsx(classes.expand, {
                         [classes.expandOpen]: expanded,
