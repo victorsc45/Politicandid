@@ -8,6 +8,7 @@ import MatchRow from "../../components/MatchRow/index";
 import { useStoreContext } from '../../store/store';
 import axios from "axios";
 import { UPDATE_MATCHES_DATA } from '../../store/actions';
+import marble from '../../components/images/marble.jpg'
 
 const MatchesPage = () => {
   // const data = API.getFakeMatches();
@@ -88,6 +89,11 @@ useEffect(()=> {
   
 
   return (
+    <div className="backgroundImage"
+       style={{
+              background: `url(${marble})`,
+            }}
+    >...
     <div id="big-container">
         <div className="matches-container">
           <h2>Candidates</h2>
@@ -107,7 +113,7 @@ useEffect(()=> {
           </div>
         </div>
     </div>
-
+</div>
   );
 };
 export default MatchesPage;
