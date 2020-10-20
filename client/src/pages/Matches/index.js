@@ -43,7 +43,7 @@ useEffect(()=> {
         level = other_user.campaign.level;
       }
       let match_object = {name: other_user.name, username: other_user.username, score: Math.floor(userScore), candidate: other_user.candidate, office: office, body: body, level: level,
-      city: other_user.city, state: other_user.state, county: other_user.county, country: other_user.country};
+      city: other_user.city, state: other_user.state, county: other_user.county, country: other_user.country, issues: other_user.issues};
       
       return match_object
     }

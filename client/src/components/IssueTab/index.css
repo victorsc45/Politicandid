@@ -1,0 +1,15 @@
+.tab-container {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 4px;
+}
+
+.tab-issue-name {
+}
+
+.tab-issue-info {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}

@@ -1,9 +1,12 @@
 import React from 'react'
 import "./index.css";
+import IssueTab from "../IssueTab/index";
 
 export default function MatchProfile(props) {
 
-    
+    console.log("match profile props:", props.match.issues);
+    const issues = props.match.issues;
+
     return (
         <div id="match-profile">
                 <h1 id="user-name">{props.match.name}</h1>
@@ -26,14 +29,15 @@ export default function MatchProfile(props) {
                     <p>State: {props.match.state} </p>
                     <p>Country: {props.match.country} </p>
                     </div>
+
+                    <h5>Issues</h5>
+                    <div id="profile-issue-block">
+                   {issues ? (issues.map(issue => {
+                       return <IssueTab issue={issue} />
+                   })): <></>}
+                    </div>
                 </div>
-                {/* <h1>Issues</h1>
-                <div id="location-block">
-                    <p>City: {props.userData.city}</p>
-                    <p>County: {props.userData.county} </p>
-                    <p>State: {props.userData.state} </p>
-                    <p>Country: {props.userData.country} </p>
-                </div> */}
+                
 
 
         
