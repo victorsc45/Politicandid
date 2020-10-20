@@ -9,6 +9,8 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { UPDATE_ALL_DATA } from '../../store/actions';
 import constitHires from '../../components/images/constitHires.jpg';
+import PcComponent from '../../components/FadeIn/PcComponent';
+import { useSpring, animated } from 'react-spring';
 
 // import { useStoreContext } from '../../store/store';
 // import { StoreProvider } from "../../store/store";

@@ -14,6 +14,8 @@ const SignUp = () => {
     username: '',
     password: '',
   });
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
+  const AnimatedPc = animated(PcComponent)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,6 +45,8 @@ const SignUp = () => {
 
   return (
     <div>
+
+      <animated.div style={props}><PcComponent /></animated.div>
       <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       <div id="signup-container">
         <video autoPlay loop muted
@@ -60,7 +64,7 @@ const SignUp = () => {
           <source src={tourists} type="video/mp4" />
         </video>
         <div className="text-center">
-          
+
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
               Email address
