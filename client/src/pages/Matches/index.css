@@ -24,10 +24,26 @@
 }
 
 .matches-container {
-  /* padding-top: 30px; */
+  padding-top: 30px;
 }
 
 .list-container {
   max-height: 300px;
   overflow-y: scroll;
+  border: 1px solid black;
+}
+
+#profile-info-block {
+  background-color: black;
+  color: white;
+}
+
+#profile-campaign-block {
+  background-color: black;
+  color: white;
+}
+
+.tab-container {
+  background-color: black;
+  color: white;
 }
