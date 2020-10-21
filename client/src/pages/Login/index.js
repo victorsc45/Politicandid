@@ -63,8 +63,9 @@ const Login = () => {
 
   return (
     <div>
-      {/* <animated.div style={props}><PcComponent /><h1><span class="candid">Politics</span>
-        <span class="politi">Simplified</span></h1></animated.div> */}
+      <div id="animation">
+      <animated.div style={props}><PcComponent /></animated.div>
+      </div>
       <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
 
       <div id="login-container">
@@ -109,7 +110,7 @@ const Login = () => {
               value={loginCreds.password}
               onChange={handleChange}
             />
-            <button className="btn btn-lg btn-warning btn-block" type="submit" onClick={handleSubmit}>
+            <button className="custom-btn btn btn-lg btn-block" type="submit" onClick={handleSubmit}>
               Login
         </button>
           </form>
