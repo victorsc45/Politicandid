@@ -3,6 +3,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { LOADING, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
+import "./index.css";
 
 const Navbar = () => {
   const [state, dispatch] = useStoreContext();
@@ -27,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-custom">
       <button
         className="navbar-toggler"
         type="button"
@@ -39,36 +40,36 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div className="collapse navbar-collapse navbar-custom" id="navbarNav">
         <ul className="navbar-nav">
           {state.user ? (
             <>
               <li className="nav-item active">
-                <Link to="/" className="btn btn-link text-primary">
-                  <span className="text-warning">Home</span>
+                <Link to="/" className="btn btn-link text-primary text-custom">
+                  <span className="text-custom">Home</span>
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="/matchespage" className="btn btn-link text-secondary">
-                  <span className="text-warning">Matches</span>
+                <Link to="/matchespage" className="btn btn-link text-secondary text-custom">
+                  <span className="text-custom">Matches</span>
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
-                  <span className="text-danger">Logout</span>
+                <Link to="#" className="btn btn-link text-secondary text-custom" onClick={logout}>
+                  <span className="text-custom">Logout</span>
                 </Link>
               </li>
             </>
           ) : (
               <>
                 <li className="nav-item active">
-                  <Link to="/login" className="btn btn-link text-secondary">
-                    <span className="text-warning"> Login</span>
+                  <Link to="/login" className="btn btn-link text-secondary text-custom">
+                    <span className="text-custom"> Login</span>
                   </Link>
                 </li>
                 <li className="nav-item active">
-                  <Link to="/signup" className="btn btn-link">
-                    <span className="text-warning">Sign up</span>
+                  <Link to="/signup" className="btn btn-link text-custom">
+                    <span className="text-custom">Sign up</span>
                   </Link>
                 </li>
               </>

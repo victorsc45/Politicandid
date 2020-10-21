@@ -7,7 +7,9 @@ import { Spring } from 'react-spring';
 import { useSpring, animated } from 'react-spring';
 import PcComponent from '../../components/FadeIn/PcComponent';
 
+
 const SignUp = () => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
   const history = useHistory();
 
   const [signUpCreds, setSignUpCreds] = useState({
@@ -43,6 +45,9 @@ const SignUp = () => {
 
   return (
     <div>
+      <div id="animation">
+      <animated.div style={props}><PcComponent /></animated.div>
+      </div>
       <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       <div id="signup-container">
         <video autoPlay loop muted

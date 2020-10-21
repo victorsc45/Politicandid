@@ -20,7 +20,6 @@
 .videezyStyling {
   position: absolute;
   right: 10px;
-
 }
 
 .text-center > h1 {
@@ -28,13 +27,15 @@
 }
 
 .politi {
-  color:#D4002E;
+  color: #d4002e;
 }
 
 .candid {
-  color: #11319B;
+  color: #11319b;
 }
 
 .signupBtn {
-  background-color: #38A100;
+  background: rgb(255, 66, 66);
+  color: white;
+  border: 1px solid rgb(66, 66, 255);
 }
