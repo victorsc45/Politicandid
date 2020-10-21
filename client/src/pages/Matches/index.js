@@ -110,10 +110,10 @@ useEffect(()=> {
 
   return (
     <div id="page-container">
-        <MatchProfile match={match} />
+        {match.name ? <MatchProfile match={match} /> : <></> }
         <div id="big-container">
         <div className="matches-container">
-          <h2>Candidates</h2>
+        {match.name ? <h2>Candidates</h2> : <></> }
           <div className="list-container">
             {data.filter(match => match.candidate).map(candidate => {
               return <MatchRow match={candidate} setMatchName={setMatchName}/>
@@ -122,7 +122,7 @@ useEffect(()=> {
         </div>
         <br />
         <div className="matches-container">
-          <h2>Users</h2>
+        {match.name ? <h2>Users</h2> : <></> }
           <div className="list-container">
           {data.filter(match => !match.candidate).map(candidate => {
               return <MatchRow match={candidate} setMatchName={setMatchName}/>
