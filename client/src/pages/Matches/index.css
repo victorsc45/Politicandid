@@ -3,6 +3,13 @@
   flex-direction: row;
   justify-content: center;
   padding-top: 30px;
+
+  padding-top: 10px;
+  width: 100%;
+  min-height: 100vh;
+
+  background: url(../../components/images/marble.jpg);
+  padding-bottom: 60px;
 }
 
 #match-profile {

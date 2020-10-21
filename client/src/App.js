@@ -50,7 +50,7 @@ const App = () => {
   }, [dispatch, history]);
 
   return (
-      <div>
+      <div id="app-container">
         <Navbar />
 
         {state.user ? (
