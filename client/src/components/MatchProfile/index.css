@@ -5,6 +5,10 @@
   margin-top: 10px;
 }
 
+#match-profile {
+  background: white;
+}
+
 #profile-block p {
   margin-bottom: 5px;
 }
