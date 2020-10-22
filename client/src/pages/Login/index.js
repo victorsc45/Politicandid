@@ -13,7 +13,8 @@ import { useSpring, animated } from 'react-spring';
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1850})
+  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 })
   const AnimatedPc = animated(PcComponent)
 
 
@@ -62,12 +63,10 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div id="animation">
-      <animated.div style={props}><PcComponent /></animated.div>
-      </div>
-      <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
 
+    <div id="animation">
+      <animated.div style={props}><PcComponent />
+      </animated.div>
       <div id="login-container">
 
         <video autoPlay loop muted
@@ -84,38 +83,43 @@ const Login = () => {
         >
           <source src={tourists} type="video/mp4" />
         </video>
+        <div id="loginId">
+          <animated.div style={props1}>
+            <form className="form-signin">
+              <label htmlFor="inputEmail" className="sr-only">
+                Email address
+            </label>
+              <input
+                type="email"
+                id="inputEmail"
+                className="form-control"
+                name="username"
+                placeholder="Email address"
+                value={loginCreds.username}
+                onChange={handleChange}
+              />
+              <label htmlFor="inputPassword" className="sr-only">
+                Password
+            </label>
+              <input
+                type="password"
+                id="inputPassword"
+                className="form-control"
+                name="password"
+                placeholder="Password"
+                value={loginCreds.password}
+                onChange={handleChange}
+              />
+              <button className="custom-btn btn btn-lg btn-block" type="submit" onClick={handleSubmit}>
+                Login
+              </button>
 
-          <form className="form-signin">
-            <label htmlFor="inputEmail" className="sr-only">
-              Email address
-        </label>
-            <input
-              type="email"
-              id="inputEmail"
-              className="form-control"
-              name="username"
-              placeholder="Email address"
-              value={loginCreds.username}
-              onChange={handleChange}
-            />
-            <label htmlFor="inputPassword" className="sr-only">
-              Password
-        </label>
-            <input
-              type="password"
-              id="inputPassword"
-              className="form-control"
-              name="password"
-              placeholder="Password"
-              value={loginCreds.password}
-              onChange={handleChange}
-            />
-            <button className="custom-btn btn btn-lg btn-block" type="submit" onClick={handleSubmit}>
-              Login
-        </button>
-          </form>
+            </form>
+          </animated.div>
         </div>
+        <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       </div>
+    </div>
   );
 };
 
