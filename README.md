@@ -118,8 +118,8 @@
       ---- mitchellmunderwood@gmail.com
       ---- victorlitzau+github@gmail.com
 
-# GitHub Information Collaborative Repo:
- 
+# GitHub Information 
+  # Collaborative Repo:
   # '''' https://github.com/mitchellmunderwood/Project-3 ''''
 
   Picture of Developers: 
