@@ -20,7 +20,10 @@
 
 [![npm version](https://img.shields.io/badge/dotenv-----v8.2.0-orange)](https://www.npmjs.com/package/dotenv)
 
-[![npm version](https://img.shields.io/badge/material-ui----4.11.0-brightgreen)](https://www.npmjs.com/package/@material-ui/core)
+[![npm version](https://img.shields.io/badge/material-ui----v4.11.0-brightgreen)](https://www.npmjs.com/package/@material-ui/core)
+
+[![npm version](https://img.shields.io/badge/react-spring----v8.0.27-pink)](https://www.npmjs.com/package/react-spring)
+
  # Licence
   
   >  
