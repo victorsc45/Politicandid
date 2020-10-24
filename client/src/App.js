@@ -12,7 +12,7 @@ import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
 // import { StoreProvider } from './store/store';
 // import API from './utils/API'
-import PcComponent from './components/FadeIn/PcComponent';
+import PcComponent from './components/FadeIn/index';
 import { Spring } from 'react-spring';
 import { useSpring, animated } from 'react-spring';
 

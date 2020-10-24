@@ -37,18 +37,23 @@
 .custom-btn {
   background: rgb(255, 66, 66);
   color: white;
-  border: 1px solid rgb(66, 66, 255);
+  /* border: 1px solid rgb(66, 66, 255); */
+  border-color: none;
+}
+
+.custom-btn:hover {
+  background: rgb(66, 66, 255);
+  color: white;
 }
 
 #animation {
   display: flex;
-  justify-content: center;
-  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 #loginId {
-  margin-top:50px;
+  /* margin-top: 50px; */
   justify-content: center;
-  padding-top: 100px;
-  padding-right: 
+  /* padding-top: 100px; */
 }
