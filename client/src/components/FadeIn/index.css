@@ -1,0 +1,23 @@
+@media only screen and (max-width: 768px) {
+  #politicandid-logo {
+    width: 500px;
+    height: auto;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #politicandid-logo {
+    width: 500px;
+    height: auto;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #politicandid-logo {
+    width: 600px;
+    height: auto;
+    padding-top: 40px;
+  }
+}

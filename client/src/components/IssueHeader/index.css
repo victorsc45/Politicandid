@@ -3,12 +3,25 @@
   flex-direction: row;
   align-items: top;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin: 10px;
   /* border: 1px solid black; */
   padding: 10px;
   background: rgb(238, 238, 238);
   border-radius: 5px;
   box-shadow: 2px 2px #b3b3b3;
+}
+
+@media only screen and (max-width: 768px) {
+  .issue-header {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .issue-header {
+    width: 600px;
+  }
 }
 
 .issue-header h6 {

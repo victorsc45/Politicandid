@@ -12,8 +12,9 @@
 
 #stance-range p {
   margin: 0px;
+  text-align: center;
 }
 
-.neutral {
+/* .neutral {
   padding-right: 25px;
-}
+} */

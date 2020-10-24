@@ -2,14 +2,29 @@
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 4px;
+  margin: 0px;
+  margin-bottom: 10px;
+  width: 300px;
+  box-shadow: 1px 1px rgb(145, 1, 1);
+}
+
+.tab-container p {
+  margin: 0px;
 }
 
 .tab-issue-name {
+  width: 200px;
+  margin: 0px;
 }
 
 .tab-issue-info {
-  width: 90%;
+  width: 100%;
+  margin: 0px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+
+.tab-issue-info p {
+  margin: 0px;
 }

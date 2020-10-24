@@ -73,14 +73,14 @@ export default function VoterValuesBlock(props) {
                  <div id="issues-container">
                 
                 <div id="issues-grid">
-                    <IssueHeader />
+                    {/* <IssueHeader /> */}
+                    <IssueAdd />
                     {props.issuesData.map(issue => {
                     return <IssueRow key={issue.issue} issueData={issue} />
                     })}
-                    <IssueAdd />
                 </div>
-            </div>
             <button id="update-button" onClick={(event)=>handleUpdate(event)}>Update</button>
+            </div>
             </Collapse>
 
 

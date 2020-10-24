@@ -56,7 +56,7 @@ function IssueSlider(props) {
     <div className={classes.root}>
       <div id="stance-range">
         <p>Against</p>
-        <p className="neutral">Neutral</p>
+        <p>Neutral</p>
         <p>For</p>
     </div>
       <Slider

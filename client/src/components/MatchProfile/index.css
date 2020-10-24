@@ -1,12 +1,41 @@
 #profile-block {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 10px;
 }
 
-#match-profile {
+#profile-info-row {
+  display: flex;
+  flex-direction: row;
+  width: 425px;
+  margin: 0px;
+}
+
+#matches-profile-page {
+  border: 1px solid black;
+  /* background: rgb(255, 106, 106); */
   background: white;
+  color: black;
+  margin: 10px;
+  /* margin-right: 40px; */
+  /* width: 300px; */
+  /* height: 700px; */
+  overflow-y: hidden;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* width: 1000px; */
+}
+
+#match-profile {
+  /* background: rgb(255, 106, 106); */
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 #profile-block p {
@@ -16,17 +45,25 @@
 #profile-campaign-block {
   border: 1px solid black;
   border-radius: 5px;
-  width: 90%;
+  width: 200px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 1px 1px black;
 }
 
 #profile-info-block {
   border: 1px solid black;
   border-radius: 5px;
-  width: 90%;
+  width: 200px;
   padding: 10px;
   margin: 10px;
+  box-shadow: 1px 1px black;
+}
+
+#profile-issues-row {
+  width: 350px;
+  margin: 0px;
+  padding-top: 10px;
 }
 
 #profile-issue-block {
@@ -34,9 +71,29 @@
   margin-left: 30px;
   height: 250px;
   overflow-y: scroll;
+  width: 325px;
 }
 
 h5 {
   width: 100%;
   text-align: center;
+}
+
+@media only screen and (max-width: 700px) {
+  #match-profile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #profile-campaign-block {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  #profile-info-block {
+    padding: 5px;
+    margin: 5px;
+  }
 }

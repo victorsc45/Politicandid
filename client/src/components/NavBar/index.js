@@ -28,7 +28,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-custom">
+    <nav className="navbar navbar-expand-lg navbar-custom navbar-light">
       <button
         className="navbar-toggler"
         type="button"
@@ -45,17 +45,17 @@ const Navbar = () => {
           {state.user ? (
             <>
               <li className="nav-item active">
-                <Link to="/" className="btn btn-link text-primary text-custom">
+                <Link to="/" className="btn btn-link text-primary ">
                   <span className="text-custom">Home</span>
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="/matchespage" className="btn btn-link text-secondary text-custom">
+                <Link to="/matchespage" className="btn btn-link text-secondary">
                   <span className="text-custom">Matches</span>
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="#" className="btn btn-link text-secondary text-custom" onClick={logout}>
+                <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
                   <span className="text-custom">Logout</span>
                 </Link>
               </li>
@@ -63,12 +63,12 @@ const Navbar = () => {
           ) : (
               <>
                 <li className="nav-item active">
-                  <Link to="/login" className="btn btn-link text-secondary text-custom">
+                  <Link to="/login" className="btn btn-link text-secondary ">
                     <span className="text-custom"> Login</span>
                   </Link>
                 </li>
                 <li className="nav-item active">
-                  <Link to="/signup" className="btn btn-link text-custom">
+                  <Link to="/signup" className="btn btn-link ">
                     <span className="text-custom">Sign up</span>
                   </Link>
                 </li>

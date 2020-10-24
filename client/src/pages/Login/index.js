@@ -5,15 +5,15 @@ import { LOADING, SET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
 import tourists from '../../components/video/tourists.mp4'
-import PcComponent from '../../components/FadeIn/PcComponent';
+import PcComponent from '../../components/FadeIn/index';
 import { useSpring, animated } from 'react-spring';
-
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1850})
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000})
   const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 })
   const AnimatedPc = animated(PcComponent)
 
@@ -63,10 +63,13 @@ const Login = () => {
   };
 
   return (
-
+    
+<div id="signup-container">
     <div id="animation">
       <animated.div style={props}><PcComponent />
+
       </animated.div>
+
       <div id="login-container">
 
         <video autoPlay loop muted
@@ -83,6 +86,7 @@ const Login = () => {
         >
           <source src={tourists} type="video/mp4" />
         </video>
+
         <div id="loginId">
           <animated.div style={props1}>
             <form className="form-signin">
@@ -113,12 +117,15 @@ const Login = () => {
               <button className="custom-btn btn btn-lg btn-block" type="submit" onClick={handleSubmit}>
                 Login
               </button>
-
+              <Link to="/signup" className="btn btn-link text-custom">
+                    <span className="text-custom">Create an Account</span>
+                  </Link>
             </form>
           </animated.div>
         </div>
         <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       </div>
+    </div>
     </div>
   );
 };

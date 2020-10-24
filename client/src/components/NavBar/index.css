@@ -5,3 +5,12 @@
 .navbar-custom {
   background: rgb(65, 65, 255);
 }
+
+.navbar-toggler {
+  color: white;
+  /* background: white; */
+}
+
+.navbar-toggler {
+  background: white;
+}
