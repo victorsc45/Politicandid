@@ -7,8 +7,8 @@ export default function IssueTab(props) {
         <div className="tab-container">
             <p className="tab-issue-name">{props.issue.issue}</p>
             <div className="tab-issue-info">
-                <p>Important: {props.issue.important ? "True" : "False"}</p>
                 <p>Stance: {props.issue.stance}</p>
+                <p>Important: {props.issue.important ? "True" : "False"}</p>
             </div>
         </div>
     );

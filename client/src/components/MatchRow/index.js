@@ -20,13 +20,14 @@ export default function MatchRow(props) {
 
     return (
         <div className="match-row" ref={rowRef} username={username} onClick={(event)=>{handleClick(event)}}>
-            <div className="match-score">Score: {score}</div>
-            <div className="match-name">{name}</div>
+            <div className="match-info-row">
+                <div className="match-name">{name}</div>
+                <div className="match-score">Score: {score}</div>
+            </div>
             {candidate ? (
-                <div className="match-candidate">
+                <div className="match-info-row flex-between">
                     <p>{office}</p>
                     <p>{body}</p>
-                    <p>{level}</p>
                     </div>
             ): (
                 <></>

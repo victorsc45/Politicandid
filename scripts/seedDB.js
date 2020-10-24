@@ -62,17 +62,6 @@ const Seed = [
     campaign: { level: "Federal", body: "Executive", office: "President" }
   },
   {
-    name: "Adolf Hitler",
-    city: "Kenly",
-    county: "Johnson",
-    state: "NC",
-    country: "USA",
-    username: "Adolf@Hitler.com",
-    password: "$2a$10$Rie2O8zEaKN5.G0kVPGrz.Me.f9Qmg6D8CRIQc7SokjIQIHlN1rNi",
-    issues: [{ issue: "LGBT Rights", stance: -10, important: true }, { issue: "Government Mandates", stance: 10, important: true }, { issue: "First Amendment", stance: -10, important: true }, { issue: "Gun Control", stance: 10, important: true }, { issue: "Net Neutrality", stance: 9, important: true }, { issue: "Government Healthcare", stance: 10, important: true }],
-    candidate: false
-  },
-  {
     name: "Cardi B",
     city: "Atlanta",
     county: "Fulton",

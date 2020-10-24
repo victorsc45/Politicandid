@@ -5,13 +5,13 @@ import "./index.css";
 import tourists from '../../components/video/tourists.mp4';
 import { Spring } from 'react-spring';
 import { useSpring, animated } from 'react-spring';
-import PcComponent from '../../components/FadeIn/PcComponent';
+import PcComponent from '../../components/FadeIn/index';
 
 
 const SignUp = () => {
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } })
   const history = useHistory();
-
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000})
+  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 })
   const [signUpCreds, setSignUpCreds] = useState({
     username: '',
     password: '',
@@ -44,10 +44,10 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div id="signup-container">
       <div id="animation">
       <animated.div style={props}><PcComponent /></animated.div>
-      </div>
+      
       <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
       <div id="signup-container">
         <video autoPlay loop muted
@@ -64,7 +64,8 @@ const SignUp = () => {
         >
           <source src={tourists} type="video/mp4" />
         </video>
-        <div className="text-center">
+        <div id="loginId">
+          <animated.div style={props1}>
           
           <form className="form-signin">
             <label htmlFor="inputEmail" className="sr-only">
@@ -93,9 +94,12 @@ const SignUp = () => {
             />
             <button className="signupBtn btn btn-lg btn-primary btn-block" type="submit" onClick={handleSubmit}>
               Sign Up
-        </button>
+            </button>
           </form>
+          </animated.div>
         </div>
+        
+      </div>
       </div>
     </div>
   );

@@ -46,10 +46,14 @@ export default function VoterInfoBlock(props) {
 
                 {/* Always render */}
                 <div id="location-block">
+                    <div>
                     <h4>City: {props.userData.city}</h4>
                     <h4>County: {props.userData.county} </h4>
+                    </div>
+                    <div>
                     <h4>State: {props.userData.state} </h4>
                     <h4>Country: {props.userData.country} </h4>
+                    </div>
                 </div>
 
                 {/* have a second block with candidate info if the person is a candidate */}

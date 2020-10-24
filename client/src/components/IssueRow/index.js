@@ -24,10 +24,22 @@ function IssueRow(props) {
 
 
     return <div className="issue-row">
-        <h6 className="issue-name">{issue}</h6>
-        <Slider className="issue-stance" stance={stance} issueName={issue}/>
-        <Switch className="issue-important" important={important} issueName={issue} />
+        <div className="issue-row-line"> 
+            <p>Issue: </p>     
+            <h6 className="issue-name">{issue}</h6>
+        </div>
+        <div className="issue-row-line">
+            <p>Stance: </p> 
+            <Slider className="issue-stance" stance={stance} issueName={issue}/>
+        </div>
+        <div className="issue-row-line">
+            <p>Importance: </p> 
+            <Switch className="issue-important" important={important} issueName={issue} />
+        </div>
+        <div className="issue-row-line delete">
         <button onClick={(event)=> handleRemove(event)}className="delete-button" title="Delete Issue">X</button>
+
+        </div>
     </div>
 }
 

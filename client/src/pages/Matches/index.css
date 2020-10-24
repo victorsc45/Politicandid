@@ -1,56 +1,72 @@
 #page-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 30px;
-
-  padding-top: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding-top: 10px; */
   width: 100%;
   min-height: 100vh;
-
   background: url(../../components/images/marble.jpg);
   padding-bottom: 60px;
 }
 
-#match-profile {
+.matches-container {
+  padding-top: 15px;
+
   border: 1px solid black;
-  margin: 20px;
-  margin-right: 40px;
-  width: 300px;
-  height: 700px;
-  overflow-y: hidden;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
+  /* background: rgb(255, 106, 106); */
+  background: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .matches-container {
+    padding: 5px;
+  }
+}
+
+.matches-container h2 {
+  color: black;
+}
+
+.matches-container {
+  margin: 10px;
 }
 
 #big-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* align-items: center; */
 }
 
-.matches-container {
-  padding-top: 30px;
+@media only screen and (max-width: 1200px) {
+  #big-container {
+    flex-direction: column;
+  }
 }
 
 .list-container {
   max-height: 300px;
+  border-radius: 5px;
+  padding: 20px;
   overflow-y: scroll;
-  border: 1px solid black;
+  /* background: rgb(255, 106, 106); */
+  background: white;
 }
 
 #profile-info-block {
-  background-color: black;
-  color: white;
+  background: white;
+  color: rgb(52, 52, 198);
 }
 
 #profile-campaign-block {
-  background-color: black;
-  color: white;
+  background: white;
+  color: rgb(52, 52, 198);
 }
 
 .tab-container {
-  background-color: black;
-  color: white;
+  background: white;
+  color: rgb(52, 52, 198);
 }
