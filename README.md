@@ -79,7 +79,7 @@
 
   > No installation necessary; just follow the deployed link below:
 
-   ---- https://politicandid.herokuapp.com/ ---
+   ---- https://mu-politicandid.herokuapp.com/ ---
 
                
 # Usage:
