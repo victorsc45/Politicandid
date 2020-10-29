@@ -1,3 +1,4 @@
+// declare express router and user routes as /users
 const router = require('express').Router();
 const userRoutes = require('./users');
 

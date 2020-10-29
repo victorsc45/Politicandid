@@ -1,7 +1,7 @@
-//Connect to Mongo database
+//Connect to Mongo database use tempDB as database name 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
+// production or local instance of mongoose using promise at global level
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/tempDB',
   {
     useNewUrlParser: true,

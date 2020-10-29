@@ -1,10 +1,11 @@
+/* positioning signup container  and user inputs of sign in form*/
 #signup-container {
   margin-top: 30px;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
-
+/*  */
 #inputEmail {
   margin-bottom: 5px;
 }
@@ -16,35 +17,34 @@
 .form-signin {
   margin-top: 100px;
 }
-
+/* positioning of background video */
 .videezyStyling {
   position: absolute;
   right: 10px;
 }
-
+/* position h1 */
 .text-center > h1 {
   font-size: 72px;
 }
-
+/* future styling */
 .politi {
   color: #d4002e;
 }
-
+/* future styling */
 .candid {
   color: #11319b;
 }
-
+/* styling sign up button */
 .signupBtn {
   background: rgb(255, 66, 66);
   color: white;
-  /* border: 1px solid rgb(66, 66, 255); */
 }
-
+/* position of sign up container*/
 .signup-container {
   display: flex;
   flex-direction: column;
 }
-
+/* style button */
 btn-primary {
   border-color: none;
 }

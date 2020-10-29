@@ -1,3 +1,4 @@
+/* positioning of page container for matches forms */
 #page-container {
   display: flex;
   flex-direction: column;
@@ -9,44 +10,41 @@
   background: url(../../components/images/marble.jpg);
   padding-bottom: 60px;
 }
-
+/* styling of matches form */
 .matches-container {
   padding-top: 15px;
-
   border: 1px solid black;
   border-radius: 5px;
   padding: 20px;
-  /* background: rgb(255, 106, 106); */
   background: white;
 }
-
+/* media query for other screen sizes */
 @media only screen and (max-width: 600px) {
   .matches-container {
     padding: 5px;
   }
 }
-
+/* style h2 */
 .matches-container h2 {
   color: black;
 }
-
+/* style container */
 .matches-container {
   margin: 10px;
 }
-
+/* positioning of matching container */
 #big-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  /* align-items: center; */
 }
-
+/* media query for different screen sizes */
 @media only screen and (max-width: 1200px) {
   #big-container {
     flex-direction: column;
   }
 }
-
+/* style list container */
 .list-container {
   max-height: 300px;
   border-radius: 5px;
@@ -55,17 +53,17 @@
   /* background: rgb(255, 106, 106); */
   background: white;
 }
-
+/* style information area */
 #profile-info-block {
   background: white;
   color: rgb(52, 52, 198);
 }
-
+/* style campaign area */
 #profile-campaign-block {
   background: white;
   color: rgb(52, 52, 198);
 }
-
+/* style tab */
 .tab-container {
   background: white;
   color: rgb(52, 52, 198);

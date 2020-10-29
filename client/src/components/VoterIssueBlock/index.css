@@ -1,3 +1,4 @@
+/* position issues area for voter block */
 #issues-container {
   /* border: 1px solid black; */
   padding: 5px;
@@ -12,25 +13,21 @@
 }
 
 #issues-grid {
-  /* border: 1px solid black; */
   padding: 10px;
 }
-
+/* style update button */
 #update-button {
-  /* position: relative;
-  left: 670px;
-  bottom: 30px; */
   border: 1px solid black;
   border-radius: 5px;
   color: blue;
   width: 60%;
 }
-
+/* style hover over button */
 #update-button:hover {
   color: white;
   background: blue;
 }
-
+/* format issue name */
 #issues {
   width: 500px;
   text-align: center;

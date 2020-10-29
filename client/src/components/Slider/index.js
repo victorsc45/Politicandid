@@ -1,41 +1,35 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-// import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import "./index.css";
 import { UPDATE_ISSUES_DATA } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 
-
+// function issue slider component export with props
 function IssueSlider(props) {
-  const { stance, issueName  } = props;
+  const { stance, issueName } = props;
+  // declare react state and dispatch for store file
   const [state, dispatch] = useStoreContext();
-
-
+  // event handler for slider value based on the current issue
   const handleChange = (event) => {
     event.preventDefault();
-    // console.log("Slider Event", event);
-    // console.log("Slider Event Target ", event.target);
-    // console.log("Slider Event Target Value ", event.target.getAttribute("aria-valuetext"));
-    
     const current_issues = state.issuesData;
-
-    // UPDATE THIS SECTION
+    // UPDATE THIS SECTION // map current issues and extract value of text
     const new_issues = current_issues.map(issue => {
       if (issue.issue === issueName) {
-          issue.stance = event.target.getAttribute("aria-valuetext");
+        issue.stance = event.target.getAttribute("aria-valuetext");
         return issue
       } else {
         return issue
       }
     })
     // ===============
-
-    dispatch({type: UPDATE_ISSUES_DATA, issuesData: new_issues});
+    // dispatch type and issue data
+    dispatch({ type: UPDATE_ISSUES_DATA, issuesData: new_issues });
 
   }
 
-  // No Idea how this works, need to find out
+  // declare style for the material ui component
 
   const useStyles = makeStyles({
     root: {
@@ -58,7 +52,7 @@ function IssueSlider(props) {
         <p>Against</p>
         <p>Neutral</p>
         <p>For</p>
-    </div>
+      </div>
       <Slider
         onChange={(event) => handleChange(event)}
         defaultValue={parseInt(props.stance)}

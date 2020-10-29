@@ -1,5 +1,6 @@
+// declare database, require models as db
 const db = require('../database/models');
-
+// export mongoose CRUD operations 
 module.exports = {
   findById: function (req, res) {
     db.User.findById(req.params.id)

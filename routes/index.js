@@ -1,6 +1,6 @@
 const path = require('path');
 const router = require('express').Router();
-
+// requires api path lowest level by express router as ./api
 const apiRoutes = require('./api');
 
 // API Routes
