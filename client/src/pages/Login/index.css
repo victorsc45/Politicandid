@@ -1,3 +1,4 @@
+/* position of login container */
 #login-container {
   margin-top: 30px;
   width: 500px;
@@ -16,7 +17,7 @@
 .form-signin {
   margin-top: 100px;
 }
-
+/* position of background video */
 .videezyStyling {
   position: absolute;
   right: 10px;
@@ -25,7 +26,7 @@
 .text-center > h1 {
   font-size: 72px;
 }
-
+/* future development styling */
 .politi {
   color: #d4002e;
 }
@@ -33,27 +34,25 @@
 .candid {
   color: #11319b;
 }
-
+/* button styling  */
 .custom-btn {
   background: rgb(255, 66, 66);
   color: white;
   /* border: 1px solid rgb(66, 66, 255); */
   border-color: none;
 }
-
+/* button hover style */
 .custom-btn:hover {
   background: rgb(66, 66, 255);
   color: white;
 }
-
+/* animation positioning */
 #animation {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+/* position login content */
 #loginId {
-  /* margin-top: 50px; */
-  justify-content: center;
-  /* padding-top: 100px; */
+   justify-content: center;
 }

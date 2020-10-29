@@ -1,3 +1,4 @@
+// import required dependencies and styling
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -6,7 +7,7 @@ import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { StoreProvider } from './store/store';
-
+// index rendering top level router then context provider encapsulates app
 ReactDOM.render(
   <React.StrictMode>
     <Router>

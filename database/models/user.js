@@ -1,3 +1,4 @@
+// model users declare mongoose as database technology and password encryption by bcryptjs
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
@@ -9,7 +10,7 @@ const userSchema = new Schema({
   username: { type: String, unique: true, required: true },
   password: { type: String, unique: true, required: true },
   name: { type: String, required: true, default: "John Smith" },
-  city: {type: String, required: true, default: "Los Angeles"},
+  city: { type: String, required: true, default: "Los Angeles" },
   county: { type: String, required: true, default: "Orange" },
   state: { type: String, required: true, default: "CA" },
   country: { type: String, required: true, default: "USA" },

@@ -1,3 +1,4 @@
+/* css issue row placement, styling and media queries for different size screens */
 .issue-row {
   display: flex;
   flex-direction: column;

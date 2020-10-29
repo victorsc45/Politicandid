@@ -1,3 +1,4 @@
+/* positioning home page and setting background */
 #home-container {
   padding-top: 10px;
   width: 100%;
@@ -9,7 +10,7 @@
   background: url(../../components/images/marble.jpg);
   padding-bottom: 60px;
 }
-
+/* add logo to home page */
 #logo {
   margin-top: 90px;
 }

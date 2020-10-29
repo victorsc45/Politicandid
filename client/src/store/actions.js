@@ -1,4 +1,5 @@
-// Don't know where 'LOADING' is used
+// action file used by store file in switch cases and 
+// variables are used thoughout front end to maintain conformity and avoid mistakes
 export const LOADING = 'LOADING';
 
 export const LOGIN = 'LOGIN';

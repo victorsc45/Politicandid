@@ -4,11 +4,12 @@ import { Link, useHistory } from 'react-router-dom';
 import { LOADING, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
-
+// functional component navbar exported
 const Navbar = () => {
+  // declare react state and dispatch for store file
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-
+  // logout event and unset user data
   const logout = (event) => {
     event.preventDefault();
 
@@ -26,7 +27,7 @@ const Navbar = () => {
         console.log('Logout error');
       });
   };
-
+  // use react router dom and Link to display navbar links
   return (
     <nav className="navbar navbar-expand-lg navbar-custom navbar-light">
       <button

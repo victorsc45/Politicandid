@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+// import dependencies and usecontext for the store file
+import React from 'react';
 import Switch from '@material-ui/core/Switch';
 import "./index.css";
-import axios from "axios";
 import { useStoreContext } from '../../store/store';
 import { UPDATE_ISSUES_DATA } from '../../store/actions';
-// import { SET_USER_SWITCH } from '../../store/actions';
 
+// material ui export of functional switch component with props
 export default function BooleanSwitch(props) {
-  const { important, issueName  } = props;
+  const { important, issueName } = props;
   const [state, dispatch] = useStoreContext();
-
+  // event change handler for switch that maps over current-issues and returns the important issues
   const handleChange = () => {
     const current_issues = state.issuesData;
     const new_issues = current_issues.map(issue => {
@@ -20,8 +20,8 @@ export default function BooleanSwitch(props) {
         return issue
       }
     })
-
-    dispatch({type: UPDATE_ISSUES_DATA, issuesData: new_issues});
+    // dispatch the type and issue date to based on actions.js and newissues
+    dispatch({ type: UPDATE_ISSUES_DATA, issuesData: new_issues });
 
   }
 

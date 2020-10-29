@@ -1,3 +1,4 @@
+/* position voter info area */
 #location-block {
   display: flex;
   flex-direction: row;
@@ -7,11 +8,12 @@
 #location-block h4 {
   margin: 20px;
 }
-
+/* position username */
 #user-name {
   margin-bottom: 0px;
   text-align: center;
 }
+/* style campaign button */
 #campaign-button {
   width: 200px;
   background-color: #D4002E;
@@ -19,11 +21,11 @@
   border: none;
   border-radius: 5px;
 }
-
+/* style hover over button */
 #campaign-button:hover {
   background: #11319B;
 }
-
+/* style voter button */
 #voter-button {
   width: 200px;
   background: #46C700;
@@ -31,7 +33,7 @@
   border: none;
   border-radius: 5px;
 }
-
+/* position campaign area */
 #campaign-block {
   display: flex;
   flex-direction: column;

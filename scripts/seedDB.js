@@ -1,3 +1,4 @@
+// local seed file used for testing
 const mongoose = require("mongoose");
 const db = require("../database/models");
 

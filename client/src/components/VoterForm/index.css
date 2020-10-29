@@ -1,3 +1,4 @@
+/* position form */
 #form-block {
   display: flex;
   flex-direction: column;
@@ -7,23 +8,23 @@
 #location-block h4 {
   margin: 20px;
 }
-
+/* position user name a */
 #user-name {
   margin-bottom: 0px;
   text-align: center;
 }
-
+/* style form */
 .outlined-basic {
   margin: 10px;
 }
-
+/* style button */
 .update-info-button {
   border: 1px solid black;
   background: lightgrey;
   border-radius: 5px;
   color: blue;
 }
-
+/* hover style button */
 .update-info-button:hover {
   color: white;
   background: blue;

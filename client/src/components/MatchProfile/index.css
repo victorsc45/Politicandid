@@ -1,17 +1,18 @@
+/* css styling for profile match  */
 #profile-block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
 }
-
+/* positioning for profile info */
 #profile-info-row {
   display: flex;
   flex-direction: row;
   width: 425px;
   margin: 0px;
 }
-
+/* styling for profile page */
 #matches-profile-page {
   border: 1px solid black;
   /* background: rgb(255, 106, 106); */
@@ -28,7 +29,7 @@
   flex-direction: column;
   /* width: 1000px; */
 }
-
+/* styling for match profile area */
 #match-profile {
   /* background: rgb(255, 106, 106); */
   background: white;
@@ -41,7 +42,7 @@
 #profile-block p {
   margin-bottom: 5px;
 }
-
+/* styling campaign area */
 #profile-campaign-block {
   border: 1px solid black;
   border-radius: 5px;

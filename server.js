@@ -1,12 +1,15 @@
+// declare required dependencies for express routing and app 
+// mogoose as db connection, session for collection 
+//passport required for password encryption
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('passport');
-
+// mongoose connection and routes 
 const mongooseConnection = require('./database');
 const routes = require('./routes');
-
+//express app and port declaration
 const app = express();
 const PORT = process.env.PORT || 3001;
 
