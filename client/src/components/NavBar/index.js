@@ -1,15 +1,18 @@
 import axios from 'axios';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { Nav } from 'react-bootstrap';
 import { LOADING, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
+
+
 // functional component navbar exported
 const Navbar = () => {
   // declare react state and dispatch for store file
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-  // logout event and unset user data
+  // // logout event and unset user data
   const logout = (event) => {
     event.preventDefault();
 
@@ -34,30 +37,31 @@ const Navbar = () => {
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse navbar-custom" id="navbarNav">
-        <ul className="navbar-nav">
+
+      <div className="collapse navbar-collapse navbar-custom" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
           {state.user ? (
             <>
               <li className="nav-item active">
-                <Link to="/" className="btn btn-link text-primary ">
-                  <span className="text-custom">Home</span>
+                <Link to="/" className="btn btn-link text-primary nav-link">
+                  <span className="text-custom nav-link">Home</span>
                 </Link>
               </li>
               <li className="nav-item active">
                 <Link to="/matchespage" className="btn btn-link text-secondary">
-                  <span className="text-custom">Matches</span>
+                  <span className="text-custom nav-link">Matches</span>
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="#" className="btn btn-link text-secondary" onClick={logout}>
-                  <span className="text-custom">Logout</span>
+                <Link to="/login" className="btn btn-link text-secondary" onClick={logout}>
+                  <span className="text-custom nav-link">Logout</span>
                 </Link>
               </li>
             </>
@@ -65,12 +69,12 @@ const Navbar = () => {
               <>
                 <li className="nav-item active">
                   <Link to="/login" className="btn btn-link text-secondary ">
-                    <span className="text-custom"> Login</span>
+                    <span className="text-custom nav-link"> Login</span>
                   </Link>
                 </li>
                 <li className="nav-item active">
                   <Link to="/signup" className="btn btn-link ">
-                    <span className="text-custom">Sign up</span>
+                    <span className="text-custom nav-link">Sign up</span>
                   </Link>
                 </li>
               </>

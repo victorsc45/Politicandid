@@ -4,17 +4,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
+//import hamburgerMenuPage from './components/hamburgerMenuPage/index.js';
 import './index.css';
+//import Navbar from './components/NavBar';
 import * as serviceWorker from './serviceWorker';
 import { StoreProvider } from './store/store';
 // index rendering top level router then context provider encapsulates app
 ReactDOM.render(
   <React.StrictMode>
+
     <Router>
       <StoreProvider>
         <App />
       </StoreProvider>
     </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

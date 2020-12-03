@@ -2,13 +2,15 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
-import Navbar from './components/NavBar/index';
+//import Navbar from './components/NavBar/index';
 import Home from './pages/Home/index';
 import MatchesPage from './pages/Matches/index';
 import Login from './pages/Login/index';
 import Signup from './pages/SignUp/index';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
+import hamburgerMenuPage from './components/hamburgerMenuPage/index';
+import Navbar from './components/NavBar';
 
 // create App function
 const App = () => {
@@ -46,6 +48,7 @@ const App = () => {
   // or return to login signup - redirected to login
   return (
     <div>
+
       <Navbar />
       {state.user ? (
         <Switch>
@@ -54,12 +57,15 @@ const App = () => {
           </Route>
           <Route exact path="/matchespage" component={MatchesPage} />
         </Switch>
+
       ) : (
+
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Redirect to="/login" />
           </Switch>
+
         )}
     </div>
   );
