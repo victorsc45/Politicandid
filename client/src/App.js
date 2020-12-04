@@ -9,7 +9,6 @@ import Login from './pages/Login/index';
 import Signup from './pages/SignUp/index';
 import { LOADING, SET_USER, UNSET_USER } from './store/actions';
 import { useStoreContext } from './store/store';
-import hamburgerMenuPage from './components/hamburgerMenuPage/index';
 import Navbar from './components/NavBar';
 
 // create App function

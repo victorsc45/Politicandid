@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
 import { LOADING, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";

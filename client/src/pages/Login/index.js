@@ -15,8 +15,8 @@ import { Link } from 'react-router-dom';
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000 })
-  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 })
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1500 })
+  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000 })
   const AnimatedPc = animated(PcComponent)
 
   // get and set required login credentials
@@ -122,7 +122,8 @@ const Login = () => {
               </form>
             </animated.div>
           </div>
-          <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
+          {/* video complements of videezy.com */}
+          {/* <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div> */}
         </div>
       </div>
     </div>

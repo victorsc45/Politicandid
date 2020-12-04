@@ -1,6 +1,8 @@
 /* css styling navbar */
 .text-custom {
-  color: white;
+  color: white!important;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .navbar-custom {
