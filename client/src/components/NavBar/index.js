@@ -14,9 +14,6 @@ const Navbar = () => {
   // // logout event and unset user data
   const logout = (event) => {
     event.preventDefault();
-
-    dispatch({ type: LOADING });
-
     axios
       .post('/api/users/logout')
       .then((response) => {
