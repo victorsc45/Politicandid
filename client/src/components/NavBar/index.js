@@ -22,7 +22,7 @@ const Navbar = () => {
       .then((response) => {
         if (response.status === 200) {
           dispatch({ type: UNSET_USER });
-          history.replace('/login');
+          history.replace('/');
         }
       })
       .catch((error) => {
