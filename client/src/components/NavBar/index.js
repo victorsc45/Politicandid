@@ -49,7 +49,7 @@ const Navbar = () => {
           {state.user ? (
             <>
               <li className="nav-item active">
-                <Link to="/" className="btn btn-link text-primary nav-link">
+                <Link to="/" className="btn btn-link text-secondary">
                   <span className="text-custom nav-link">Home</span>
                 </Link>
               </li>

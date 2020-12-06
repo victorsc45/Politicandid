@@ -12,3 +12,104 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.MuiPaper-root, .MuiCard-root {
+width: 80%;
+height: auto;
+display: flex;
+flex-direction: column;
+
+}
+.MuiCardContent-root {
+  width: 100%;
+  height: auto;
+  display: flex;
+ flex-direction: column;
+  align-items: center;
+}
+@media only screen and (min-width: 280px) {
+  .MuiPaper-root, .MuiCard-root   {
+      width: 100%;
+    height: auto;
+    display: flex;
+flex-direction: column;
+  }
+  .MuiCardContent-root {
+     width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  .makeStyles-root-91{
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .MuiPaper-root, .MuiCard-root   {
+      width: 90%;
+    height: auto;
+    display: flex;
+flex-direction: column;
+
+  }
+  .MuiCardContent-root {
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  .makeStyles-root-91 {
+  
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .MuiPaper-root, .MuiCard-root {
+
+    
+   
+  
+    width: 80%;
+    height: auto;
+    display: flex;
+flex-direction: column;
+
+  }
+  .MuiCardContent-root {
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  .makeStyles-root-91{
+    font-size: 18px;
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+  }
+  h3 {
+    font-size: 16px;
+    text-align: center;
+  }
+}

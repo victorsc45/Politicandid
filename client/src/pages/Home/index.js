@@ -7,6 +7,7 @@ import CandidateInfoBlock from "../../components/CandidateInfoBlock/index";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { useStoreContext } from '../../store/store';
+// import WithWidth from '../../components/WithWidth';
 // function for Home page and passing props
 function Home(props) {
   //console.log("Home Component Props", props.state)
@@ -23,8 +24,8 @@ function Home(props) {
   // return by ternary operation card based on candidacy rendering the view of user voter or candidate
   // pass user data, candidate data, and issues data by state
   return (<div id="home-container">
-
     <Card >
+      {/* <WithWidth /> */}
       <CardContent>
         <VoterInfoBlock reRender={reRender} userData={state.userData} />
       </CardContent>
