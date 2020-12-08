@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "./index.css";
-import voter from '../../components/video/voter.mp4';
+import tourists from '../../components/video/tourists.mp4';
 import { useSpring, animated } from 'react-spring';
 import PcComponent from '../../components/FadeIn/index';
 
@@ -51,7 +51,7 @@ const SignUp = () => {
       <div id="animation">
         <animated.div style={props}><PcComponent /></animated.div>
         {/* video complements of videezy.com */}
-        {/* <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div> */}
+        <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
         <div id="signup-container">
           <video autoPlay loop muted
             style={{
@@ -65,7 +65,7 @@ const SignUp = () => {
               zIndex: "-1"
             }}
           >
-            <source src={voter} type="video/mp4" />
+            <source src={tourists} type="video/mp4" />
           </video>
           <div id="loginId">
             <animated.div style={props1}>

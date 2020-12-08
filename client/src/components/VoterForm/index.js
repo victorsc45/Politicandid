@@ -8,6 +8,7 @@ import "./index.css";
 import { useStoreContext } from '../../store/store';
 import { useHistory } from 'react-router-dom';
 import { UNSET_USER } from '../../store/actions';
+
 // export functional component voter form and props
 export default function VoterForm(props) {
     // declare state and dispatch for the store file and establish useHistory 
@@ -113,6 +114,7 @@ export default function VoterForm(props) {
                 <TextField className="outlined-basic" onChange={(event) => { updateInfo(event) }} ref={countryRef} placeholder={props.data.country} id="country" label="Country" variant="outlined" />
                 <br />
             </div>
+
 
             {/* buttons to update voter info, update candidate info, and button to delete user and unset data */}
             <button className="update-info-button" onClick={(event) => handleUpdate(event)}>Update Voter Info</button>

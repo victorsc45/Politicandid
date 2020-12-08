@@ -36,3 +36,87 @@
   color: white;
   background: blue;
 }
+@media only screen and (min-width: 280px) {
+  .issue-add{
+    width: 240px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 240px;
+    height: auto;
+    
+  }
+ }
+ @media only screen and (min-width: 320px) {
+  .issue-add{
+    width: 280px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 280px;
+    height: auto;
+    
+  }
+}
+ @media only screen and (min-width: 440px) {
+  .issue-add{
+    width: 300px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 300px;
+    height: auto;
+    
+  }
+ }
+ @media only screen and (min-width: 520px) {
+  .issue-add{
+    width: 394px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 394px;
+    height: auto;
+    
+  }
+ }
+ @media only screen and (min-width: 768px) {
+  .issue-add{
+    width: 440px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 440px;
+    height: auto;
+    
+  }
+ }
+ @media only screen and (min-width: 992px) {
+  .issue-add{
+    width: 560px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 560px;
+    height: auto;
+    
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .issue-add{
+    width: 600px;
+    height: auto;
+
+  }
+  .MuiInputBase-root {
+    width: 600px;
+    height: auto;
+    
+  }
+}

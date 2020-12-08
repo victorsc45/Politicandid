@@ -6,7 +6,7 @@ import { LOADING, SET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
 //import tourists from '../../components/video/tourists.mp4'
-import voter from '../../components/video/voter.mp4';
+import tourists from '../../components/video/tourists.mp4';
 import PcComponent from '../../components/FadeIn/index';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
@@ -83,7 +83,7 @@ const Login = () => {
               zIndex: "-1"
             }}
           >
-            <source src={voter} type="video/mp4" />
+            <source src={tourists} type="video/mp4" />
           </video>
 
           <div id="loginId">
@@ -123,7 +123,7 @@ const Login = () => {
             </animated.div>
           </div>
           {/* video complements of videezy.com */}
-          {/* <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div> */}
+          <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
         </div>
       </div>
     </div>

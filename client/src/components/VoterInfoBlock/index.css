@@ -65,7 +65,7 @@
 
   }
 }
-/* @media only screen and (min-width: 688px) {
+@media only screen and (min-width: 688px) {
   #user-name, #location-block {
 
     
@@ -76,7 +76,7 @@
     
 
   }
-} */
+}
 @media only screen and (min-width: 768px) {
   #user-name, #location-block   {
 

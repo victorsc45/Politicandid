@@ -9,11 +9,136 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 12px;
+  margin-left: 40px;
 }
 
 #stance-range p {
   margin: 0px;
   text-align: center;
+ 
 }
+.MuiSlider-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-left: inherit;
+}
+@media only screen and (min-width: 440px) {
+  #stance-range {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
+  #stance-range p {
+    margin: 0px;
+    text-align: center;
+   font-size: 12px;
+  }
+  .MuiSlider-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (min-width: 520px) {
+  #stance-range {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
+  #stance-range p {
+    margin: 0px;
+    text-align: center;
+  font-size: 16px;
+  }
+  .MuiSlider-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
+}
+@media only screen and (min-width: 680px) {
+  #stance-range {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+  }
+  #stance-range p {
+    margin: 0px;
+    text-align: center;
+  font-size: 17px;
+  }
+  .MuiSlider-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    
+  }
 
+}
+@media only screen and (min-width: 992px) {
+  #stance-range {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    width:250px; 
+  }
+  #stance-range p {
+    margin: 0px;
+    text-align: center;
+  font-size: 18px;
+  }
+  .MuiSlider-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    width: 250px !important;
+  }
 
+}
+@media only screen and (min-width: 1280px) {
+  #stance-range {
+    /* margin-top: 5px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    width:300px; 
+  }
+  #stance-range p {
+    margin: 0px;
+    text-align: center;
+  font-size: 18px;
+  }
+  .MuiSlider-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    width: 300px !important;
+  }
+
+}
