@@ -34,7 +34,7 @@ function IssueSlider(props) {
   const useStyles = makeStyles({
     root: {
       width: 200,
-      margin: 20,
+      margin: 10,
     },
   });
 
@@ -49,8 +49,8 @@ function IssueSlider(props) {
   return (
     <div className={classes.root}>
       <div id="stance-range">
-        <p>Against </p>
-        <p>Neutral </p>
+        <p>Against</p>
+        <p>Neutral</p>
         <p>For</p>
       </div>
       <Slider

@@ -34,7 +34,7 @@ export default function BooleanSwitch(props) {
       <Switch
         onChange={() => handleChange()}
         checked={important}
-        size="large"
+        size="medium"
         color="default"
         inputProps={{ 'aria-label': 'checkbox with default color' }}
       />

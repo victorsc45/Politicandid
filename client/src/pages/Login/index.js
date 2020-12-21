@@ -5,8 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { LOADING, SET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
-//import tourists from '../../components/video/tourists.mp4'
-import tourists from '../../components/video/tourists.mp4';
+import tourists from '../../components/video/tourists.mp4'
 import PcComponent from '../../components/FadeIn/index';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
@@ -15,8 +14,8 @@ import { Link } from 'react-router-dom';
 const Login = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
-  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1500 })
-  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000 })
+  const props = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1000 })
+  const props1 = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 })
   const AnimatedPc = animated(PcComponent)
 
   // get and set required login credentials
@@ -53,6 +52,8 @@ const Login = () => {
             userData: response.data.userData,
             issuesData: response.data.issuesData,
             candidateData: response.data.candidateData,
+            followers: response.data.followers,
+            following: response.data.following
           });
           // reset route to home 
           history.replace('/');
@@ -122,7 +123,6 @@ const Login = () => {
               </form>
             </animated.div>
           </div>
-          {/* video complements of videezy.com */}
           <div className="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
         </div>
       </div>

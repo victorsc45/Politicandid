@@ -43,11 +43,11 @@ export default function VoterInfoBlock(props) {
                 <h1 id="user-name">{props.userData.name}</h1>
                 {/* Always render */}
                 <div id="location-block">
-                    <div className="voter-details">
+                    <div>
                         <h4>City: {props.userData.city}</h4>
                         <h4>County: {props.userData.county} </h4>
                     </div>
-                    <div className="voter-details">
+                    <div>
                         <h4>State: {props.userData.state} </h4>
                         <h4>Country: {props.userData.country} </h4>
                     </div>

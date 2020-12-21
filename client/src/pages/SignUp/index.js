@@ -50,7 +50,6 @@ const SignUp = () => {
     <div id="signup-container">
       <div id="animation">
         <animated.div style={props}><PcComponent /></animated.div>
-        {/* video complements of videezy.com */}
         <div class="videezyStyling"> Free B-Roll by <a href="http://videezy.com">Videezy</a></div>
         <div id="signup-container">
           <video autoPlay loop muted

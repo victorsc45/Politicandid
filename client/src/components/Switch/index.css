@@ -13,15 +13,7 @@
 .issue-important-range p {
   margin: 0px;
 }
-@media only screen and (min-width: 440px) {
- 
-}
-@media only screen and (min-width: 520px) {
- 
-}
-@media only screen and (min-width: 680px) {
- 
-}
+
 @media only screen and (min-width: 992px) {
  h6 {
    font-size: 19px;
