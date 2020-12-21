@@ -30,15 +30,16 @@ const App = () => {
         console.log("APP SET USER");
         console.log("Response from Database on UseEffect from App Component", response);
 
-        dispatch({ type: SET_USER, 
-          user: response.data.username, 
+        dispatch({
+          type: SET_USER,
+          user: response.data.username,
           userData: response.data.userData,
           issuesData: response.data.issuesData,
           candidateData: response.data.candidateData,
-          following: response.data.following, 
+          following: response.data.following,
           followers: response.data.followers
         });
-        
+
         history.push('/');
 
       } else {
@@ -50,26 +51,27 @@ const App = () => {
   }, [dispatch, history]);
 
   return (
-      <div>
-        <Navbar />
+    <div>
+      <Navbar />
 
-        {state.user ? (
+      {state.user ? (
+        <Switch>
+          <Route exact path="/" >
+            <Home state={state} />
+          </Route>
+          <Route exact path="/matchespage" component={MatchesPage} />
+          <Route exact path="/matchpage" component={MatchPage} />
+          <Route exact path="/news" component={News} />
+          <Route exact path="/login" component={Login} />
+        </Switch>
+      ) : (
           <Switch>
-            <Route exact path="/" >
-              <Home state={state} />
-            </Route>
-            <Route exact path="/matchespage" component={MatchesPage} />
-            <Route exact path="/matchpage" component={MatchPage} />
-            <Route exact path="/news" component={News} />
+
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Redirect to="/login" />
           </Switch>
-        ) : (
-            <Switch>
-              
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Redirect to="/login" />
-            </Switch>
-          )}
+        )}
     </div>
   );
 };
