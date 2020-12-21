@@ -14,15 +14,19 @@ const Navbar = () => {
     event.preventDefault();
 
     dispatch({ type: LOADING });
-
-    axios
-      .post('/api/users/logout')
-      .then((response) => {
-        if (response.status === 200) {
-          dispatch({ type: UNSET_USER });
-          history.replace('/login');
-        }
-      })
+    app.get('/logout', function (req, res) {
+      req.logout();
+      res.redirect('/login');
+    })
+      // ;
+      // axios
+      //   .get('/api/users/logout')
+      //   .then((response) => {
+      //     if (response.status === 200) {
+      //       dispatch({ type: UNSET_USER });
+      //       history.replace('/login');
+      //     }
+      //   })
       .catch((error) => {
         console.log('Logout error');
       });
