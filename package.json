@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
+    "material-ui-search-bar": "^1.0.0",
     "mongoose": "^5.10.8",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
