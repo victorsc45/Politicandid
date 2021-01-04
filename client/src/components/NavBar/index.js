@@ -17,7 +17,7 @@ const Navbar = () => {
         .then((response) => {
           if (response.status === 200) {
             dispatch({ type: UNSET_USER });
-            state = LOGOUT;
+            state({ type: LOGOUT });
           }
         })
         .catch((error) => {
