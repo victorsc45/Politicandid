@@ -14,7 +14,7 @@ const Navbar = () => {
 
     dispatch({ type: UNSET_USER });
     localStorage.removeItem('jwtToken');
-    window.location.reload('/');
+    window.location.reload();
     // await
     //   axios.post('api/users/logout')
     //     .then((response) => {
@@ -63,9 +63,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item active">
-                <button className="btn btn-link text-secondary" onClick={handleLogout}>
+                <Link to="/login" className="btn btn-link text-secondary" onClick={handleLogout}>
                   <span className="text-custom">Logout</span>
-                </button>
+                </Link>
               </li>
             </>
           ) : (
