@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { LOADING, UNSET_USER } from '../../store/actions';
+import { LOGOUT, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
 import "./index.css";
 // functional component navbar exported
@@ -17,6 +17,7 @@ const Navbar = () => {
         .then((response) => {
           if (response.status === 200) {
             dispatch({ type: UNSET_USER });
+            state = LOGOUT;
           }
         })
         .catch((error) => {
