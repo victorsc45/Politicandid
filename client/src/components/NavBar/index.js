@@ -14,7 +14,7 @@ const Navbar = () => {
 
     dispatch({ type: UNSET_USER });
     localStorage.removeItem('jwtToken');
-    window.location.reload();
+    window.location.reload('/');
     // await
     //   axios.post('api/users/logout')
     //     .then((response) => {
