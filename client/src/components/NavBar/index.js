@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { LOADING, UNSET_USER } from '../../store/actions';
 import { useStoreContext } from '../../store/store';
@@ -10,24 +10,21 @@ const Navbar = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
   // logout event and unset user data switched to direct routing link
-  // const logout = (event) => {
-  //   event.preventDefault();
+  async function handleLogout() {
 
-  //   dispatch({ type: LOADING });
+    await
+      axios.post('api/users/logout')
+        .then((response) => {
+          if (response.status === 200) {
+            dispatch({ type: UNSET_USER });
+          }
+        })
+        .catch((error) => {
+          console.log('Logout error');
+        });
 
-  //   axios.get('/logout', function (req, res) {
-  //     req.logout();
+  };
 
-  //   }).then((response) => {
-  //     if (response.status === 200) {
-  //       dispatch({ type: UNSET_USER });
-  //       history.replace('/login');
-  //     }
-  //   })
-  //     .catch((error) => {
-  //       console.log('Logout error');
-  //     });
-  // };
   // use react router dom and Link to display navbar links
   return (
     <nav className="navbar navbar-expand-lg navbar-custom navbar-light">
@@ -62,9 +59,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item active">
-                <Link to="/login" className="btn btn-link text-secondary">
+                <button className="btn btn-link text-secondary" onClick={handleLogout}>
                   <span className="text-custom">Logout</span>
-                </Link>
+                </button>
               </li>
             </>
           ) : (
