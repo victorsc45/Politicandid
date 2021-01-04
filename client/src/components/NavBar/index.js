@@ -10,19 +10,20 @@ const Navbar = () => {
   const [state, dispatch] = useStoreContext();
   const history = useHistory();
   // logout event and unset user data switched to direct routing link
-  async function handleLogout() {
-
-    await
-      axios.post('api/users/logout')
-        .then((response) => {
-          if (response.status === 200) {
-            dispatch({ type: UNSET_USER });
-            state({ type: LOGOUT });
-          }
-        })
-        .catch((error) => {
-          console.log('Logout error');
-        });
+  function handleLogout() {
+    localStorage.removeItem('jwtToken');
+    window.location.reload();
+    // await
+    //   axios.post('api/users/logout')
+    //     .then((response) => {
+    //       if (response.status === 200) {
+    //         dispatch({ type: UNSET_USER });
+    //         state({ user: LOGOUT });
+    //       }
+    //     })
+    //     .catch(() => {
+    //       console.log('Logout error');
+    //     });
 
   };
 
