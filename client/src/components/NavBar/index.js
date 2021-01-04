@@ -11,6 +11,8 @@ const Navbar = () => {
   const history = useHistory();
   // logout event and unset user data switched to direct routing link
   function handleLogout() {
+
+    dispatch({ type: UNSET_USER });
     localStorage.removeItem('jwtToken');
     window.location.reload();
     // await
