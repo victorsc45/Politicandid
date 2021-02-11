@@ -162,7 +162,8 @@
 
   The following is a video display of the working PolitiCandid App
 
- ---- https://drive.google.com/file/d/1tqaVfPrBRnt3SoTM3wuiNu5KA5ksUZWR/view ----
+ ---- log into deployed version (link above) using email: victor@litzau.com and password: victor ----
+ ---- change info, change hot topic political views, match with candidates and, search political news or just create your own profile! Have fun ----
 
 
 
